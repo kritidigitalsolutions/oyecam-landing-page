@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120c1f"/>
+      <stop offset="50%" stop-color="#1a122c"/>
+      <stop offset="100%" stop-color="#0a0714"/>
+    </linearGradient>
+    <linearGradient id="callOverlay" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0714" stop-opacity="0.8"/>
+      <stop offset="30%" stop-color="#0a0714" stop-opacity="0.1"/>
+      <stop offset="70%" stop-color="#0a0714" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a0714" stop-opacity="0.9"/>
+    </linearGradient>
+    <clipPath id="mainVidClip">
+      <rect x="60" y="45" width="1080" height="585" rx="28" />
+    </clipPath>
+    <clipPath id="pipClip">
+      <rect x="850" y="80" width="250" height="340" rx="20" />
+    </clipPath>
+    <filter id="shadow1" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="675" fill="url(#bg1)"/>
+
+  <!-- Main Video Container -->
+  <g clip-path="url(#mainVidClip)" filter="url(#shadow1)">
+    <!-- Primary Video: Ananya in daylight home environment -->
+    <image href="/people/ananya.jpg" x="60" y="45" width="1080" height="585" preserveAspectRatio="xMidYMid slice" opacity="0.92"/>
+    <rect x="60" y="45" width="1080" height="585" fill="url(#callOverlay)"/>
+
+    <!-- App Top Bar HUD -->
+    <rect x="90" y="75" width="310" height="52" rx="26" fill="#151022" fill-opacity="0.75" stroke="#ffffff" stroke-opacity="0.2"/>
+    <circle cx="120" cy="101" r="16" fill="#10b981" fill-opacity="0.2"/>
+    <circle cx="120" cy="101" r="6" fill="#10b981"/>
+    <text x="146" y="96" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700">Ananya, 24 • Bangalore</text>
+    <text x="146" y="114" fill="#a78bfa" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="500">HD Video Call • 14:28</text>
+
+    <!-- Connection Quality Badge -->
+    <rect x="420" y="75" width="140" height="52" rx="26" fill="#151022" fill-opacity="0.75" stroke="#ffffff" stroke-opacity="0.2"/>
+    <text x="450" y="106" fill="#34d399" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">● 1080p 60fps</text>
+
+    <!-- Picture-in-Picture window (Aryan at his desk with headphones) -->
+    <g filter="url(#shadow1)">
+      <rect x="846" y="76" width="258" height="348" rx="22" fill="#ff416c" fill-opacity="0.3" stroke="#ff416c" stroke-width="2"/>
+      <g clip-path="url(#pipClip)">
+        <image href="/people/aryan.jpg" x="850" y="80" width="250" height="340" preserveAspectRatio="xMidYMid slice"/>
+        <rect x="850" y="375" width="250" height="45" fill="#0c0817" fill-opacity="0.8"/>
+        <text x="870" y="403" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">You (Aryan • Pune)</text>
+      </g>
+    </g>
+
+    <!-- Video Call Controls Floating Bar -->
+    <g transform="translate(420, 525)">
+      <rect x="0" y="0" width="360" height="74" rx="37" fill="#130e20" fill-opacity="0.88" stroke="#ffffff" stroke-opacity="0.2" filter="url(#shadow1)"/>
+      
+      <!-- Mute Mic Button -->
+      <circle cx="50" cy="37" r="24" fill="#ffffff" fill-opacity="0.12"/>
+      <path d="M46 29 a4 4 0 0 1 8 0 v8 a4 4 0 0 1 -8 0 z M42 37 a8 8 0 0 0 16 0 M50 45 v5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="none"/>
+      
+      <!-- Video Button -->
+      <circle cx="120" cy="37" r="24" fill="#ffffff" fill-opacity="0.12"/>
+      <rect x="109" y="29" width="14" height="16" rx="3" stroke="#ffffff" stroke-width="2" fill="none"/>
+      <path d="M123 33 l8 -4 v16 l-8 -4 z" fill="#ffffff"/>
+
+      <!-- Speaker Toggle -->
+      <circle cx="190" cy="37" r="24" fill="#ffffff" fill-opacity="0.12"/>
+      <path d="M182 34 h4 l6 -5 v16 l-6 -5 h-4 z M197 32 a7 7 0 0 1 0 10" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+      <!-- Flip Camera Button -->
+      <circle cx="255" cy="37" r="20" fill="#ffffff" fill-opacity="0.08"/>
+      <path d="M249 33 a7 7 0 0 1 12 0 l-2 2 M261 41 a7 7 0 0 1 -12 0 l2 -2" stroke="#ffffff" stroke-width="2" fill="none"/>
+
+      <!-- End Call Red Pill Button -->
+      <circle cx="315" cy="37" r="24" fill="#ef4444"/>
+      <path d="M305 40 c4 -6 16 -6 20 0" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- Bottom Left Subtle Caption -->
+    <text x="90" y="565" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700">Crystal-Clear Video Calling</text>
+    <text x="90" y="590" fill="#c4b5fd" font-family="system-ui, -apple-system, sans-serif" font-size="14">Private 1-on-1 connection • End-to-end encrypted • Everyday Indian homes</text>
+  </g>
+</svg>

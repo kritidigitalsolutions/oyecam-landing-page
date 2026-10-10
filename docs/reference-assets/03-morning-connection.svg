@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="morningBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141a29"/>
+      <stop offset="50%" stop-color="#101826"/>
+      <stop offset="100%" stop-color="#0a0e17"/>
+    </linearGradient>
+    <linearGradient id="daylightGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="devClip">
+      <rect x="60" y="45" width="620" height="585" rx="28"/>
+    </clipPath>
+    <clipPath id="riyaCallClip">
+      <rect x="740" y="45" width="400" height="585" rx="32"/>
+    </clipPath>
+    <filter id="mDrop" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#morningBg)"/>
+  <rect width="1200" height="675" fill="url(#daylightGlow)"/>
+
+  <!-- Left: Dev at his morning apartment desk -->
+  <g clip-path="url(#devClip)" filter="url(#mDrop)">
+    <image href="/people/dev.jpg" x="60" y="45" width="620" height="585" preserveAspectRatio="xMidYMid slice" opacity="0.95"/>
+    <!-- Subtle environmental overlays: desk, daylight beam -->
+    <linearGradient id="deskOver" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0b101c" stop-opacity="0.2"/>
+      <stop offset="70%" stop-color="#0b101c" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#080c14" stop-opacity="0.9"/>
+    </linearGradient>
+    <rect x="60" y="45" width="620" height="585" fill="url(#deskOver)"/>
+
+    <!-- Desk Elements & Morning Badge -->
+    <rect x="90" y="75" width="230" height="42" rx="21" fill="#0f172a" fill-opacity="0.85" stroke="#38bdf8" stroke-opacity="0.3"/>
+    <circle cx="114" cy="96" r="6" fill="#38bdf8"/>
+    <text x="130" y="101" fill="#e0f2fe" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">Morning Coffee Call • 08:45 AM</text>
+
+    <!-- Morning Routine Tag on desk -->
+    <rect x="90" y="555" width="340" height="46" rx="16" fill="#0b1324" fill-opacity="0.85" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="110" y="583" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-weight="600">☕ Desk Brew &amp; Casual Catchup • Chandigarh</text>
+  </g>
+
+  <!-- Right: Phone Dock with Riya on active video call -->
+  <g clip-path="url(#riyaCallClip)" filter="url(#mDrop)">
+    <!-- Riya video stream -->
+    <image href="/people/riya.jpg" x="740" y="45" width="400" height="585" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="740" y="45" width="400" height="585" fill="#070a12" fill-opacity="0.25"/>
+
+    <!-- Top Call Bar -->
+    <rect x="760" y="65" width="360" height="56" rx="20" fill="#0b1220" fill-opacity="0.82" stroke="#ffffff" stroke-opacity="0.15"/>
+    <circle cx="788" cy="93" r="14" fill="#3b82f6" fill-opacity="0.2"/>
+    <circle cx="788" cy="93" r="5" fill="#38bdf8"/>
+    <text x="812" y="88" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700">Riya Mehra</text>
+    <text x="812" y="106" fill="#7dd3fc" font-family="system-ui, -apple-system, sans-serif" font-size="12">Jaipur • In call (09:12)</text>
+
+    <!-- Speakerphone Active Tag -->
+    <rect x="1035" y="76" width="70" height="34" rx="17" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-opacity="0.4"/>
+    <text x="1047" y="98" fill="#6ee7b7" font-family="system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="700">HD ON</text>
+
+    <!-- Live Audio Equalizer Wave -->
+    <g transform="translate(760, 500)">
+      <rect x="0" y="0" width="360" height="42" rx="16" fill="#0a101d" fill-opacity="0.85" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="18" y="26" fill="#93c5fd" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">Riya is speaking...</text>
+      <!-- Equalizer bars -->
+      <rect x="250" y="16" width="3.5" height="12" rx="1.5" fill="#38bdf8"/>
+      <rect x="258" y="11" width="3.5" height="22" rx="1.5" fill="#60a5fa"/>
+      <rect x="266" y="8" width="3.5" height="28" rx="1.5" fill="#a78bfa"/>
+      <rect x="274" y="14" width="3.5" height="16" rx="1.5" fill="#38bdf8"/>
+      <rect x="282" y="10" width="3.5" height="24" rx="1.5" fill="#60a5fa"/>
+      <rect x="290" y="18" width="3.5" height="8" rx="1.5" fill="#38bdf8"/>
+    </g>
+
+    <!-- Call Control Pills at bottom -->
+    <g transform="translate(760, 560)">
+      <rect x="0" y="0" width="360" height="54" rx="27" fill="#080e1a" fill-opacity="0.9" stroke="#ffffff" stroke-opacity="0.15"/>
+      <circle cx="60" cy="27" r="18" fill="#ffffff" fill-opacity="0.12"/>
+      <circle cx="140" cy="27" r="18" fill="#ffffff" fill-opacity="0.12"/>
+      <circle cx="220" cy="27" r="18" fill="#ffffff" fill-opacity="0.12"/>
+      <circle cx="300" cy="27" r="18" fill="#ef4444"/>
+      <path d="M292 29 c2 -4 14 -4 16 0" stroke="#ffffff" stroke-width="2.5" fill="none"/>
+    </g>
+  </g>
+</svg>

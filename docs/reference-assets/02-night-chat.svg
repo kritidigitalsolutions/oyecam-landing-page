@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0c1b"/>
+      <stop offset="50%" stop-color="#161026"/>
+      <stop offset="100%" stop-color="#080611"/>
+    </linearGradient>
+    <linearGradient id="warmLight" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#ffb703" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="nightPhotoClip">
+      <rect x="60" y="45" width="560" height="585" rx="28" />
+    </clipPath>
+    <filter id="nightGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="14" stdDeviation="22" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1200" height="675" fill="url(#nightBg)"/>
+  <rect width="1200" height="675" fill="url(#warmLight)"/>
+
+  <!-- Left: Meera comfortably relaxing at night smiling at her phone -->
+  <g clip-path="url(#nightPhotoClip)" filter="url(#nightGlow)">
+    <image href="/people/meera.jpg" x="60" y="45" width="560" height="585" preserveAspectRatio="xMidYMid slice" opacity="0.95"/>
+    <rect x="60" y="45" width="560" height="585" fill="#0c071a" fill-opacity="0.25"/>
+    <linearGradient id="bedShadow" x1="0%" y1="70%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#090514" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#090514" stop-opacity="0.85"/>
+    </linearGradient>
+    <rect x="60" y="45" width="560" height="585" fill="url(#bedShadow)"/>
+    
+    <!-- Night Mode Indicator Pill -->
+    <rect x="90" y="75" width="180" height="38" rx="19" fill="#181128" fill-opacity="0.8" stroke="#ffffff" stroke-opacity="0.15"/>
+    <circle cx="112" cy="94" r="5" fill="#a78bfa"/>
+    <text x="126" y="99" fill="#e2d9f3" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">Late Night Relax • 11:24 PM</text>
+  </g>
+
+  <!-- Right: Realistic Floating Phone & Chat Screen UI -->
+  <g transform="translate(660, 65)" filter="url(#nightGlow)">
+    <!-- Phone Glass Frame -->
+    <rect x="0" y="0" width="480" height="545" rx="32" fill="#150f24" fill-opacity="0.9" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.5"/>
+
+    <!-- Chat Header with Rohit -->
+    <rect x="0" y="0" width="480" height="88" rx="32" fill="#1d1533" fill-opacity="0.8"/>
+    <clipPath id="avatarClip">
+      <circle cx="58" cy="46" r="24"/>
+    </clipPath>
+    <circle cx="58" cy="46" r="26" fill="#ff416c" fill-opacity="0.4"/>
+    <image href="/people/rohit.jpg" x="34" y="22" width="48" height="48" preserveAspectRatio="xMidYMid slice" clip-path="url(#avatarClip)"/>
+    <circle cx="76" cy="62" r="6" fill="#10b981" stroke="#1d1533" stroke-width="2"/>
+    <text x="96" y="42" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700">Rohit Sharma</text>
+    <text x="96" y="60" fill="#34d399" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="500">Active now • New Delhi</text>
+
+    <!-- Call Icons Header -->
+    <circle cx="390" cy="46" r="18" fill="#ffffff" fill-opacity="0.08"/>
+    <path d="M384 41 h4 l5 -4 v18 l-5 -4 h-4 z" fill="#ffffff" stroke-width="1"/>
+    <circle cx="436" cy="46" r="18" fill="#ffffff" fill-opacity="0.08"/>
+    <rect x="428" y="40" width="10" height="12" rx="2" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+    <path d="M438 43 l6 -3 v12 l-6 -3 z" fill="#ffffff"/>
+
+    <!-- Conversation Messages -->
+    <!-- Message 1 (Incoming from Rohit) -->
+    <g transform="translate(24, 115)">
+      <rect x="0" y="0" width="310" height="64" rx="18" fill="#261b40" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="18" y="28" fill="#f1edfa" font-family="system-ui, -apple-system, sans-serif" font-size="14.5" font-weight="400">Hey Meera, how was your day?</text>
+      <text x="250" y="52" fill="#9d8db3" font-family="system-ui, -apple-system, sans-serif" font-size="11">11:18 PM</text>
+    </g>
+
+    <!-- Message 2 (Outgoing from Meera) -->
+    <g transform="translate(130, 200)">
+      <rect x="0" y="0" width="326" height="68" rx="18" fill="url(#sendGrad)" stroke="#ff416c" stroke-opacity="0.3"/>
+      <linearGradient id="sendGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ff416c"/>
+        <stop offset="100%" stop-color="#8b5cf6"/>
+      </linearGradient>
+      <text x="18" y="30" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="14.5" font-weight="500">Pretty good 😊 Finished that big design</text>
+      <text x="18" y="52" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="14.5" font-weight="500">presentation finally!</text>
+      <text x="265" y="54" fill="#fce7f3" font-family="system-ui, -apple-system, sans-serif" font-size="11">11:19 PM ✓✓</text>
+    </g>
+
+    <!-- Message 3 (Incoming from Rohit) -->
+    <g transform="translate(24, 290)">
+      <rect x="0" y="0" width="330" height="64" rx="18" fill="#261b40" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="18" y="28" fill="#f1edfa" font-family="system-ui, -apple-system, sans-serif" font-size="14.5" font-weight="400">That’s amazing! Up for a 5-min call?</text>
+      <text x="270" y="52" fill="#9d8db3" font-family="system-ui, -apple-system, sans-serif" font-size="11">11:21 PM</text>
+    </g>
+
+    <!-- Quick Voice Call Invite Bubble -->
+    <g transform="translate(24, 375)">
+      <rect x="0" y="0" width="432" height="66" rx="20" fill="#132328" stroke="#10b981" stroke-opacity="0.4"/>
+      <circle cx="36" cy="33" r="18" fill="#10b981"/>
+      <path d="M30 29 c2 -3 8 -3 12 0" stroke="#ffffff" stroke-width="2.5" fill="none"/>
+      <text x="68" y="28" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-weight="700">Incoming Voice Call Request</text>
+      <text x="68" y="48" fill="#6ee7b7" font-family="system-ui, -apple-system, sans-serif" font-size="12">Tap to accept or respond with text</text>
+      <rect x="330" y="16" width="86" height="34" rx="17" fill="#10b981"/>
+      <text x="352" y="38" fill="#042f2e" font-family="system-ui, -apple-system, sans-serif" font-size="12.5" font-weight="700">Answer</text>
+    </g>
+
+    <!-- Chat Input Mockup at bottom -->
+    <g transform="translate(20, 470)">
+      <rect x="0" y="0" width="380" height="48" rx="24" fill="#241a3c" stroke="#ffffff" stroke-opacity="0.15"/>
+      <text x="22" y="30" fill="#8d7ea8" font-family="system-ui, -apple-system, sans-serif" font-size="13.5">Type a message...</text>
+      <circle cx="418" cy="24" r="22" fill="#ff416c"/>
+      <path d="M412 18 l14 6 l-14 6 l4 -6 z" fill="#ffffff"/>
+    </g>
+  </g>
+</svg>

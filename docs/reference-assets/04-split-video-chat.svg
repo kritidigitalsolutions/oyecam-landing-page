@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="splitBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120e1e"/>
+      <stop offset="100%" stop-color="#090611"/>
+    </linearGradient>
+    <clipPath id="leftSplitClip">
+      <rect x="60" y="45" width="530" height="585" rx="28"/>
+    </clipPath>
+    <clipPath id="rightSplitClip">
+      <rect x="610" y="45" width="530" height="585" rx="28"/>
+    </clipPath>
+    <filter id="splitGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#splitBg)"/>
+
+  <!-- Left Screen: Zoya at home in warm room -->
+  <g clip-path="url(#leftSplitClip)" filter="url(#splitGlow)">
+    <image href="/people/zoya.jpg" x="60" y="45" width="530" height="585" preserveAspectRatio="xMidYMid slice" opacity="0.94"/>
+    <linearGradient id="zoyaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#110920" stop-opacity="0.7"/>
+      <stop offset="30%" stop-color="#110920" stop-opacity="0.1"/>
+      <stop offset="70%" stop-color="#110920" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0d0718" stop-opacity="0.9"/>
+    </linearGradient>
+    <rect x="60" y="45" width="530" height="585" fill="url(#zoyaGrad)"/>
+
+    <!-- Top Profile Pill -->
+    <rect x="85" y="70" width="230" height="46" rx="23" fill="#140b26" fill-opacity="0.85" stroke="#ffffff" stroke-opacity="0.2"/>
+    <circle cx="108" cy="93" r="14" fill="#ec4899" fill-opacity="0.3"/>
+    <circle cx="108" cy="93" r="5" fill="#f43f5e"/>
+    <text x="132" y="88" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-weight="700">Zoya Sen</text>
+    <text x="132" y="105" fill="#f472b6" font-family="system-ui, -apple-system, sans-serif" font-size="11.5">Lucknow • Mic Active</text>
+
+    <!-- Location & Audio Badge -->
+    <g transform="translate(85, 560)">
+      <rect x="0" y="0" width="260" height="44" rx="14" fill="#120a22" fill-opacity="0.85" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="16" y="27" fill="#e9d5ff" font-family="system-ui, -apple-system, sans-serif" font-size="12.5" font-weight="500">🎨 Home Studio • Soft Acoustic Vibe</text>
+    </g>
+  </g>
+
+  <!-- Right Screen: Kabir with music vibe -->
+  <g clip-path="url(#rightSplitClip)" filter="url(#splitGlow)">
+    <image href="/people/kabir.jpg" x="610" y="45" width="530" height="585" preserveAspectRatio="xMidYMid slice" opacity="0.94"/>
+    <linearGradient id="kabirGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#100b1d" stop-opacity="0.7"/>
+      <stop offset="30%" stop-color="#100b1d" stop-opacity="0.1"/>
+      <stop offset="70%" stop-color="#100b1d" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0a0713" stop-opacity="0.9"/>
+    </linearGradient>
+    <rect x="610" y="45" width="530" height="585" fill="url(#kabirGrad)"/>
+
+    <!-- Top Profile Pill -->
+    <rect x="635" y="70" width="230" height="46" rx="23" fill="#120924" fill-opacity="0.85" stroke="#ffffff" stroke-opacity="0.2"/>
+    <circle cx="658" cy="93" r="14" fill="#8b5cf6" fill-opacity="0.3"/>
+    <circle cx="658" cy="93" r="5" fill="#a855f7"/>
+    <text x="682" y="88" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-weight="700">Kabir Das</text>
+    <text x="682" y="105" fill="#c084fc" font-family="system-ui, -apple-system, sans-serif" font-size="11.5">Kolkata • Audio Connected</text>
+
+    <!-- Location & Audio Badge -->
+    <g transform="translate(635, 560)">
+      <rect x="0" y="0" width="280" height="44" rx="14" fill="#110920" fill-opacity="0.85" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="16" y="27" fill="#e9d5ff" font-family="system-ui, -apple-system, sans-serif" font-size="12.5" font-weight="500">🎸 Acoustic Session • Live Banter</text>
+    </g>
+  </g>
+
+  <!-- Central Bridge UI Floating HUD -->
+  <g transform="translate(460, 480)" filter="url(#splitGlow)">
+    <rect x="0" y="0" width="280" height="66" rx="33" fill="#160e28" fill-opacity="0.92" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/>
+    <!-- Call Timer in center -->
+    <text x="140" y="28" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="14.5" font-weight="700">Call Time: 32:10</text>
+    <text x="140" y="48" text-anchor="middle" fill="#a78bfa" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">ENCRYPTED TWO-WAY STREAM</text>
+  </g>
+</svg>
