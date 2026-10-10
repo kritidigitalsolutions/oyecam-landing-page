@@ -870,8 +870,14 @@
   .guideline-grid {
     grid-template-columns: 1fr;
   }
-  .form-row-two {
+  .form-row-two,
+  .form-group-row {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .contact-channels-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 }
 

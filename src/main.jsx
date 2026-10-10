@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import { 
@@ -8,7 +8,7 @@ import {
   Check, Menu, X, ShieldCheck, Heart, Wallet, 
   Star, ChevronDown, ChevronLeft, ChevronRight, Smartphone, Globe, UserX,
   Sparkles, Music, Instagram, Facebook, Youtube, Linkedin, ArrowUp,
-  Phone, MapPin
+  Phone, MapPin, Shield, FileText, Cookie, HeartHandshake, Mail
 } from 'lucide-react';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
@@ -589,10 +589,15 @@ function App() {
   }, [currentPage]);
 
   useEffect(() => {
-    if (drawer) menuDialog.current?.showModal();
-    else menuDialog.current?.close();
     document.body.style.overflow = drawer ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') setDrawer(false);
+    };
+    if (drawer) window.addEventListener('keydown', handleEsc);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleEsc);
+    };
   }, [drawer]);
 
   const download = () => {
@@ -717,88 +722,231 @@ function App() {
         </div>
       </header>
 
-      {/* Mobile Drawer Navigation */}
-      <dialog 
-        ref={menuDialog} 
-        className="mobile-dialog" 
-        onCancel={() => setDrawer(false)} 
-        onClick={e => { if (e.target === e.currentTarget) setDrawer(false); }}
-      >
-        <div className="drawer">
-          <button className="close" aria-label="Close navigation" onClick={() => setDrawer(false)}>
-            <X />
-          </button>
-          <Logo onNavigate={(page) => { setDrawer(false); navigateTo(page); }} />
+      {/* Ultra-Premium Mobile Navigation Drawer */}
+      <AnimatePresence>
+        {drawer && (
+          <div className="mobile-drawer-root" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+            {/* Backdrop Blur Overlay */}
+            <motion.div 
+              className="drawer-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.22 }}
+              onClick={() => setDrawer(false)}
+            />
 
-          {/* Drawer Store CTAs */}
-          <div className="drawer-store-ctas">
-            <button 
-              type="button"
-              className="drawer-store-btn apple" 
-              onClick={() => { setDrawer(false); download(); }}
+            {/* Sliding Drawer Panel */}
+            <motion.aside 
+              className="drawer-panel"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 28, stiffness: 280 }}
             >
-              <AppleIcon size={20} />
-              <span className="store-btn-text">
-                <span className="store-btn-sub">Download on the</span>
-                <span className="store-btn-main">App Store</span>
-              </span>
-            </button>
-            <button 
-              type="button"
-              className="drawer-store-btn google" 
-              onClick={() => { setDrawer(false); download(); }}
-            >
-              <GooglePlayIcon size={18} />
-              <span className="store-btn-text">
-                <span className="store-btn-sub">GET IT ON</span>
-                <span className="store-btn-main">Google Play</span>
-              </span>
-            </button>
+              {/* Drawer Top Header */}
+              <div className="drawer-header">
+                <Logo onNavigate={(page) => { setDrawer(false); navigateTo(page); }} />
+                <button 
+                  type="button" 
+                  className="drawer-close-btn" 
+                  aria-label="Close navigation" 
+                  onClick={() => setDrawer(false)}
+                >
+                  <X size={18} />
+                </button>
+              </div>
+
+              {/* Drawer Scrollable Body */}
+              <div className="drawer-scroll-body">
+                {/* Store App CTAs */}
+                <div className="drawer-store-section">
+                  <span className="drawer-section-label">GET THE MOBILE APP</span>
+                  <div className="drawer-store-grid">
+                    <button 
+                      type="button"
+                      className="drawer-app-btn apple" 
+                      onClick={() => { setDrawer(false); download(); }}
+                    >
+                      <AppleIcon size={18} />
+                      <div className="drawer-app-btn-text">
+                        <small>Download on</small>
+                        <strong>App Store</strong>
+                      </div>
+                    </button>
+                    <button 
+                      type="button"
+                      className="drawer-app-btn google" 
+                      onClick={() => { setDrawer(false); download(); }}
+                    >
+                      <GooglePlayIcon size={17} />
+                      <div className="drawer-app-btn-text">
+                        <small>GET IT ON</small>
+                        <strong>Google Play</strong>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Main Navigation Section */}
+                <div className="drawer-nav-group">
+                  <span className="drawer-section-label">EXPLORE OYECAM</span>
+                  <div className="drawer-nav-list">
+                    {[
+                      { name: 'Features', id: 'features', icon: Sparkles },
+                      { name: 'Experience', id: 'experience', icon: Video },
+                      { name: 'How It Works', id: 'how-it-works', icon: Play },
+                      { name: 'Community', id: 'community', icon: Users },
+                      { name: 'Safety', id: 'safety', icon: ShieldCheck },
+                      { name: 'Reviews', id: 'reviews', icon: Star },
+                    ].map(({ name, id, icon: Icon }) => {
+                      const isActive = currentPage === 'home' && activeSection === id;
+                      return (
+                        <a 
+                          key={id} 
+                          href={`#${id}`} 
+                          className={`drawer-nav-item ${isActive ? 'active' : ''}`}
+                          onClick={(e) => {
+                            setDrawer(false);
+                            if (currentPage !== 'home') {
+                              e.preventDefault();
+                              navigateTo('home');
+                              setTimeout(() => {
+                                const el = document.getElementById(id);
+                                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                              }, 80);
+                            }
+                          }}
+                        >
+                          <div className="drawer-nav-item-left">
+                            <span className="drawer-icon-box"><Icon size={16} /></span>
+                            <span className="drawer-nav-title">{name}</span>
+                          </div>
+                          <ArrowRight size={14} className="drawer-nav-arrow" />
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Legal & Policies Section */}
+                <div className="drawer-nav-group">
+                  <span className="drawer-section-label">LEGAL & POLICIES</span>
+                  <div className="drawer-nav-list">
+                    <button 
+                      type="button"
+                      className={`drawer-nav-item ${currentPage === 'privacy' ? 'active' : ''}`}
+                      onClick={() => { setDrawer(false); navigateTo('privacy'); }}
+                    >
+                      <div className="drawer-nav-item-left">
+                        <span className="drawer-icon-box"><Shield size={16} /></span>
+                        <span className="drawer-nav-title">Privacy Policy</span>
+                      </div>
+                      <ArrowRight size={14} className="drawer-nav-arrow" />
+                    </button>
+
+                    <button 
+                      type="button"
+                      className={`drawer-nav-item ${currentPage === 'terms' ? 'active' : ''}`}
+                      onClick={() => { setDrawer(false); navigateTo('terms'); }}
+                    >
+                      <div className="drawer-nav-item-left">
+                        <span className="drawer-icon-box"><FileText size={16} /></span>
+                        <span className="drawer-nav-title">Terms & Conditions</span>
+                      </div>
+                      <ArrowRight size={14} className="drawer-nav-arrow" />
+                    </button>
+
+                    <button 
+                      type="button"
+                      className={`drawer-nav-item ${currentPage === 'cookie-policy' ? 'active' : ''}`}
+                      onClick={() => { setDrawer(false); navigateTo('cookie-policy'); }}
+                    >
+                      <div className="drawer-nav-item-left">
+                        <span className="drawer-icon-box"><Cookie size={16} /></span>
+                        <span className="drawer-nav-title">Cookie Policy</span>
+                      </div>
+                      <ArrowRight size={14} className="drawer-nav-arrow" />
+                    </button>
+
+                    <button 
+                      type="button"
+                      className={`drawer-nav-item ${currentPage === 'community-guidelines' ? 'active' : ''}`}
+                      onClick={() => { setDrawer(false); navigateTo('community-guidelines'); }}
+                    >
+                      <div className="drawer-nav-item-left">
+                        <span className="drawer-icon-box"><HeartHandshake size={16} /></span>
+                        <span className="drawer-nav-title">Community Guidelines</span>
+                      </div>
+                      <ArrowRight size={14} className="drawer-nav-arrow" />
+                    </button>
+
+                    <button 
+                      type="button"
+                      className={`drawer-nav-item ${currentPage === 'contact' ? 'active' : ''}`}
+                      onClick={() => { setDrawer(false); navigateTo('contact'); }}
+                    >
+                      <div className="drawer-nav-item-left">
+                        <span className="drawer-icon-box"><Mail size={16} /></span>
+                        <span className="drawer-nav-title">Contact Us</span>
+                      </div>
+                      <ArrowRight size={14} className="drawer-nav-arrow" />
+                    </button>
+
+                    <button 
+                      type="button"
+                      className={`drawer-nav-item danger-item ${currentPage === 'delete-account' ? 'active-danger' : ''}`}
+                      onClick={() => { setDrawer(false); navigateTo('delete-account'); }}
+                    >
+                      <div className="drawer-nav-item-left">
+                        <span className="drawer-icon-box danger-icon"><UserX size={16} /></span>
+                        <span className="drawer-nav-title">Delete Account</span>
+                      </div>
+                      <ArrowRight size={14} className="drawer-nav-arrow" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Direct Helpline Card */}
+                <div className="drawer-helpline-card">
+                  <div className="drawer-helpline-top">
+                    <span className="live-dot" />
+                    <span className="drawer-helpline-tag">24/7 SUPPORT HELPLINE</span>
+                  </div>
+                  <a href="tel:+919010187125" className="drawer-helpline-number">
+                    <Phone size={15} />
+                    <span>+91 90101 87125</span>
+                  </a>
+                  <p className="drawer-helpline-address">
+                    1-41 Vivek Nagar Colony, Jillelaguda, Hyderabad - 500097
+                  </p>
+                </div>
+
+                {/* Drawer Footer Socials */}
+                <div className="drawer-footer">
+                  <div className="drawer-socials">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="drawer-social-btn" aria-label="Instagram">
+                      <Instagram size={16} />
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="drawer-social-btn" aria-label="Twitter">
+                      <XTwitterIcon size={15} />
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="drawer-social-btn" aria-label="YouTube">
+                      <Youtube size={16} />
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="drawer-social-btn" aria-label="LinkedIn">
+                      <Linkedin size={16} />
+                    </a>
+                  </div>
+                  <div className="drawer-footer-copy">
+                    Made with <Heart size={12} fill="#ff416c" color="#ff416c" className="inline-heart" /> in India
+                  </div>
+                </div>
+              </div>
+            </motion.aside>
           </div>
-
-          {nav.map(([name, id]) => (
-            <a 
-              key={id} 
-              href={`#${id}`} 
-              className={currentPage === 'home' && activeSection === id ? 'active' : ''}
-              onClick={(e) => {
-                setDrawer(false);
-                if (currentPage !== 'home') {
-                  e.preventDefault();
-                  navigateTo('home');
-                  setTimeout(() => {
-                    const el = document.getElementById(id);
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }, 80);
-                }
-              }}
-            >
-              {name}<ArrowUpRight size={18} />
-            </a>
-          ))}
-          
-          <a href="#/privacy" onClick={(e) => { e.preventDefault(); setDrawer(false); navigateTo('privacy'); }}>
-            Privacy Policy<ArrowUpRight size={18} />
-          </a>
-          <a href="#/terms" onClick={(e) => { e.preventDefault(); setDrawer(false); navigateTo('terms'); }}>
-            Terms & Conditions<ArrowUpRight size={18} />
-          </a>
-          <a href="#/cookie-policy" onClick={(e) => { e.preventDefault(); setDrawer(false); navigateTo('cookie-policy'); }}>
-            Cookie Policy<ArrowUpRight size={18} />
-          </a>
-          <a href="#/community-guidelines" onClick={(e) => { e.preventDefault(); setDrawer(false); navigateTo('community-guidelines'); }}>
-            Community Guidelines<ArrowUpRight size={18} />
-          </a>
-          <a href="#/contact" onClick={(e) => { e.preventDefault(); setDrawer(false); navigateTo('contact'); }}>
-            Contact Us<ArrowUpRight size={18} />
-          </a>
-          <a href="#/delete-account" onClick={(e) => { e.preventDefault(); setDrawer(false); navigateTo('delete-account'); }} style={{ color: '#f87171' }}>
-            Delete Account<ArrowUpRight size={18} />
-          </a>
-
-          <p>A little hello. A real connection.</p>
-        </div>
-      </dialog>
+        )}
+      </AnimatePresence>
 
       {/* Main Content Area - Switches Conditionally */}
       <main id="main">
