@@ -51,10 +51,9 @@ All legal pages feature a unified glassmorphism header toolbar with a quick tab 
 
 | Channel | Details | Availability |
 | :--- | :--- | :--- |
-| **Customer Support Email** | [support@oyecam.com](mailto:support@oyecam.com) | 24/7 (Response < 2h) |
 | **Direct Phone Helpline** | **+91 90101 87125** | Mon – Sat (9:00 AM – 8:00 PM IST) |
-| **Trust & Safety Escalations** | [safety@oyecam.com](mailto:safety@oyecam.com) | Priority Triage (< 1h) |
-| **Data Privacy & Grievances** | [grievance@oyecam.com](mailto:grievance@oyecam.com) | Acknowledged within 24h |
+| **Online Help Desk** | **Interactive Web Support Portal** (`#/contact`) | 24/7 Priority Ticket Dispatch |
+| **Trust & Safety Escalations** | **Direct Phone Helpline: +91 90101 87125** | Priority Escalation |
 | **Registered Corporate Office** | **1-41 Vivek Nagar Colony, Jillelaguda, Pincode - 500097** | Telangana / India |
 
 ---

@@ -173,8 +173,14 @@ export default function PrivacyPolicy({ onNavigate }) {
               <a href="tel:+919010187125">+91 90101 87125</a>
             </div>
             <div className="officer-item">
-              <strong>Email Address</strong>
-              <a href="mailto:grievance@oyecam.com">grievance@oyecam.com</a>
+              <strong>Support Portal</strong>
+              <button 
+                type="button" 
+                onClick={() => onNavigate('contact')}
+                style={{ color: '#ff688a', background: 'none', border: 'none', cursor: 'pointer', padding: 0, font: 'inherit', fontWeight: 600, textAlign: 'left' }}
+              >
+                Submit Grievance Ticket →
+              </button>
             </div>
             <div className="officer-item">
               <strong>Office Location</strong>

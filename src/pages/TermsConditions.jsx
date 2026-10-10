@@ -154,12 +154,14 @@ export default function TermsConditions({ onNavigate }) {
               <a href="tel:+919010187125">+91 90101 87125</a>
             </div>
             <div className="officer-item">
-              <strong>Support Email</strong>
-              <a href="mailto:support@oyecam.com">support@oyecam.com</a>
-            </div>
-            <div className="officer-item">
-              <strong>Legal Inquiries</strong>
-              <a href="mailto:legal@oyecam.com">legal@oyecam.com</a>
+              <strong>Support Desk</strong>
+              <button 
+                type="button" 
+                onClick={() => onNavigate('contact')}
+                style={{ color: '#ff688a', background: 'none', border: 'none', cursor: 'pointer', padding: 0, font: 'inherit', fontWeight: 600, textAlign: 'left' }}
+              >
+                Submit Legal Inquiry Ticket →
+              </button>
             </div>
             <div className="officer-item">
               <strong>Registered Office</strong>

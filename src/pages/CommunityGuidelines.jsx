@@ -153,16 +153,18 @@ export default function CommunityGuidelines({ onNavigate }) {
           </p>
           <div className="officer-card">
             <div className="officer-item">
-              <strong>Emergency Safety Escalation</strong>
-              <a href="mailto:safety@oyecam.com">safety@oyecam.com</a>
-            </div>
-            <div className="officer-item">
-              <strong>Support Helpline</strong>
+              <strong>Support & Safety Helpline</strong>
               <a href="tel:+919010187125">+91 90101 87125</a>
             </div>
             <div className="officer-item">
-              <strong>Grievance Officer</strong>
-              <a href="mailto:grievance@oyecam.com">grievance@oyecam.com</a>
+              <strong>Incident Reporting Desk</strong>
+              <button 
+                type="button" 
+                onClick={() => onNavigate('contact')}
+                style={{ color: '#ff688a', background: 'none', border: 'none', cursor: 'pointer', padding: 0, font: 'inherit', fontWeight: 600, textAlign: 'left' }}
+              >
+                Submit Incident Report via Help Desk →
+              </button>
             </div>
             <div className="officer-item">
               <strong>Registered Office</strong>

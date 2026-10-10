@@ -109,8 +109,8 @@ export default function DeleteAccount({ onNavigate }) {
             </div>
 
             <div style={{ marginTop: '28px', fontSize: '12px', color: '#8d839f' }}>
-              Have questions or want to cancel within the 30-day grace period? Contact{' '}
-              <a href="mailto:privacy@oyecam.com" style={{ color: '#d1a9f8' }}>privacy@oyecam.com</a>{' '}
+              Have questions or want to cancel within the 30-day grace period? Contact our Helpline at{' '}
+              <a href="tel:+919010187125" style={{ color: '#d1a9f8', fontWeight: 600 }}>+91 90101 87125</a>{' '}
               quoting your reference ID.
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function DeleteAccount({ onNavigate }) {
                     id="userIdentifier"
                     type="text"
                     className="form-input"
-                    placeholder="e.g. +91 98765 43210 or yourname@gmail.com"
+                    placeholder="e.g. +91 90101 00000 or registered User ID"
                     value={identifier}
                     onChange={(e) => setIdentifier(e.target.value)}
                     required

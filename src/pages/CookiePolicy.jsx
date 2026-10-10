@@ -223,16 +223,18 @@ export default function CookiePolicy({ onNavigate }) {
           </p>
           <div className="officer-card">
             <div className="officer-item">
-              <strong>Privacy & Compliance Desk</strong>
-              <a href="mailto:privacy@oyecam.com">privacy@oyecam.com</a>
-            </div>
-            <div className="officer-item">
               <strong>Direct Support Helpline</strong>
               <a href="tel:+919010187125">+91 90101 87125</a>
             </div>
             <div className="officer-item">
-              <strong>General Inquiries</strong>
-              <a href="mailto:support@oyecam.com">support@oyecam.com</a>
+              <strong>Online Inquiries</strong>
+              <button 
+                type="button" 
+                onClick={() => onNavigate('contact')}
+                style={{ color: '#ff688a', background: 'none', border: 'none', cursor: 'pointer', padding: 0, font: 'inherit', fontWeight: 600, textAlign: 'left' }}
+              >
+                Submit Inquiries via Help Desk →
+              </button>
             </div>
             <div className="officer-item">
               <strong>Registered Office</strong>

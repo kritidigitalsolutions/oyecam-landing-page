@@ -45,7 +45,7 @@ export default function ContactUs({ onNavigate }) {
     },
     {
       q: 'What should I do if I purchased coins but did not receive them?',
-      a: 'Please send an email to support@oyecam.com or submit a ticket below choosing "Coins & Billing". Include your registered phone number and Google Play or Apple App Store invoice number for instant verification.'
+      a: 'Please submit a ticket below choosing "Coins & Billing" or call our helpline at +91 90101 87125. Include your registered phone number and Google Play or Apple App Store invoice number for instant verification.'
     }
   ];
 
@@ -68,13 +68,13 @@ export default function ContactUs({ onNavigate }) {
       {/* 4 Direct Contact Cards */}
       <div className="contact-channels-grid">
         <div className="contact-card">
-          <div className="contact-card-icon support-bg"><Mail size={20} /></div>
-          <h3>Customer Support</h3>
-          <p>For account assistance, coin billing, technical help, or app questions.</p>
-          <a href="mailto:support@oyecam.com" className="contact-channel-link">
-            support@oyecam.com
+          <div className="contact-card-icon support-bg"><MessageSquare size={20} /></div>
+          <h3>Online Help Desk</h3>
+          <p>Submit an inquiry directly through our automated support ticket system below.</p>
+          <a href="#contact-name" className="contact-channel-link">
+            Raise Support Ticket ↓
           </a>
-          <span className="contact-sub-badge"><Clock size={11} /> 24/7 Priority Support</span>
+          <span className="contact-sub-badge"><Clock size={11} /> 24/7 Priority Resolution</span>
         </div>
 
         <div className="contact-card">
@@ -90,11 +90,11 @@ export default function ContactUs({ onNavigate }) {
         <div className="contact-card">
           <div className="contact-card-icon safety-bg"><ShieldAlert size={20} /></div>
           <h3>Trust & Safety Hotline</h3>
-          <p>For reporting urgent harassment, impersonation, or privacy emergencies.</p>
-          <a href="mailto:safety@oyecam.com" className="contact-channel-link">
-            safety@oyecam.com
+          <p>For reporting urgent harassment, impersonation, or safety emergencies.</p>
+          <a href="tel:+919010187125" className="contact-channel-link">
+            +91 90101 87125
           </a>
-          <span className="contact-sub-badge"><Sparkles size={11} /> Immediate Triage</span>
+          <span className="contact-sub-badge"><Sparkles size={11} /> Priority Escalation</span>
         </div>
 
         <div className="contact-card">
@@ -128,8 +128,7 @@ export default function ContactUs({ onNavigate }) {
               </p>
               <div className="ticket-badge">{ticketId}</div>
               <p className="ticket-note">
-                We have dispatched a confirmation email to <strong>{formData.email}</strong>. 
-                Our team usually responds within 2 hours.
+                Our support team has logged your inquiry and will reach out to <strong>{formData.email}</strong> promptly.
               </p>
               <button 
                 type="button" 
@@ -162,7 +161,7 @@ export default function ContactUs({ onNavigate }) {
                     type="email"
                     id="contact-email"
                     required
-                    placeholder="name@example.com"
+                    placeholder="Enter your email address"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
