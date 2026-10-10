@@ -1756,3 +1756,28 @@
   color: #ffa1b7;
 }
 
+/* Keep these overrides after the contact and guideline base rules. */
+@media (max-width: 768px) {
+  .contact-main-split,
+  .guideline-grid,
+  .form-group-row,
+  .contact-channels-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .legal-wrapper > *,
+  .contact-main-split > *,
+  .form-group {
+    min-width: 0;
+  }
+
+  .contact-form-container {
+    padding: 24px 18px;
+  }
+
+  .legal-content,
+  .legal-article {
+    overflow-wrap: anywhere;
+  }
+}
+

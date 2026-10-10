@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useId, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
@@ -38,14 +38,15 @@ function AppleIcon({ size = 18, className = '' }) {
 }
 
 function GooglePlayIcon({ size = 18, className = '' }) {
+  const gradientId = useId();
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path d="M3.609 1.814C3.266 2.177 3.067 2.748 3.067 3.504V20.496C3.067 21.252 3.266 21.823 3.609 22.186L3.684 22.254L13.197 12.74V12.56L3.684 1.746L3.609 1.814Z" fill="url(#gp-a)" />
-      <path d="M16.368 15.912L13.197 12.74V12.56L16.369 9.388L16.44 9.429L20.198 11.564C21.27 12.173 21.27 13.127 20.198 13.737L16.44 15.871L16.368 15.912Z" fill="url(#gp-b)" />
-      <path d="M16.44 15.872L13.197 12.65L3.609 22.186C3.961 22.56 4.564 22.607 5.251 22.217L16.44 15.872Z" fill="url(#gp-c)" />
-      <path d="M16.44 9.428L5.251 3.083C4.564 2.693 3.961 2.74 3.609 3.114L13.197 12.65L16.44 9.428Z" fill="url(#gp-d)" />
+      <path d="M3.609 1.814C3.266 2.177 3.067 2.748 3.067 3.504V20.496C3.067 21.252 3.266 21.823 3.609 22.186L3.684 22.254L13.197 12.74V12.56L3.684 1.746L3.609 1.814Z" fill={`url(#${gradientId}-a)`} />
+      <path d="M16.368 15.912L13.197 12.74V12.56L16.369 9.388L16.44 9.429L20.198 11.564C21.27 12.173 21.27 13.127 20.198 13.737L16.44 15.871L16.368 15.912Z" fill={`url(#${gradientId}-b)`} />
+      <path d="M16.44 15.872L13.197 12.65L3.609 22.186C3.961 22.56 4.564 22.607 5.251 22.217L16.44 15.872Z" fill={`url(#${gradientId}-c)`} />
+      <path d="M16.44 9.428L5.251 3.083C4.564 2.693 3.961 2.74 3.609 3.114L13.197 12.65L16.44 9.428Z" fill={`url(#${gradientId}-d)`} />
       <defs>
-        <linearGradient id="gp-a" x1="12.316" y1="2.723" x2="-2.441" y2="17.48" gradientUnits="userSpaceOnUse">
+        <linearGradient id={`${gradientId}-a`} x1="12.316" y1="2.723" x2="-2.441" y2="17.48" gradientUnits="userSpaceOnUse">
           <stop stopColor="#00A0FF" />
           <stop offset="0.007" stopColor="#00A1FF" />
           <stop offset="0.26" stopColor="#00BEFF" />
@@ -53,17 +54,17 @@ function GooglePlayIcon({ size = 18, className = '' }) {
           <stop offset="0.76" stopColor="#00DFFF" />
           <stop offset="1" stopColor="#00E3FF" />
         </linearGradient>
-        <linearGradient id="gp-b" x1="21.579" y1="12.65" x2="0.677" y2="12.65" gradientUnits="userSpaceOnUse">
+        <linearGradient id={`${gradientId}-b`} x1="21.579" y1="12.65" x2="0.677" y2="12.65" gradientUnits="userSpaceOnUse">
           <stop stopColor="#FFE000" />
           <stop offset="0.409" stopColor="#FFBD00" />
           <stop offset="0.775" stopColor="#FFA500" />
           <stop offset="1" stopColor="#FF9C00" />
         </linearGradient>
-        <linearGradient id="gp-c" x1="14.49" y1="14.498" x2="-4.269" y2="33.257" gradientUnits="userSpaceOnUse">
+        <linearGradient id={`${gradientId}-c`} x1="14.49" y1="14.498" x2="-4.269" y2="33.257" gradientUnits="userSpaceOnUse">
           <stop stopColor="#FF3A44" />
           <stop offset="1" stopColor="#C31162" />
         </linearGradient>
-        <linearGradient id="gp-d" x1="0.945" y1="-5.733" x2="8.913" y2="2.235" gradientUnits="userSpaceOnUse">
+        <linearGradient id={`${gradientId}-d`} x1="0.945" y1="-5.733" x2="8.913" y2="2.235" gradientUnits="userSpaceOnUse">
           <stop stopColor="#32A071" />
           <stop offset="0.069" stopColor="#2DA771" />
           <stop offset="0.476" stopColor="#15CF74" />

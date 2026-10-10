@@ -2067,7 +2067,24 @@
     min-height: auto;
   }
   .clean-story-stack {
-    min-height: 280px;
+    display: grid;
+    min-height: 0;
+  }
+  .clean-story-item {
+    /* Keep every story in flow so the tallest slide reserves enough room. */
+    position: relative;
+    inset: auto;
+    grid-area: 1 / 1;
+    min-width: 0;
+    justify-content: flex-start;
+  }
+  .clean-slider-nav {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .slider-ghost-arrows {
+    margin-left: auto;
+    flex-shrink: 0;
   }
   .clean-media-panel {
     padding: 0 28px 28px;
@@ -2108,7 +2125,7 @@
     margin: 8px 0 12px !important;
   }
   .clean-story-stack {
-    min-height: 240px !important;
+    min-height: 0;
   }
   .clean-story-action .clean-story-btn {
     padding: 10px 18px !important;
@@ -3738,6 +3755,225 @@ section, [id] {
   }
   .stats strong {
     font-size: 17px !important;
+  }
+}
+
+/* Let narrow layouts shrink without changing the desktop composition. */
+@media (max-width: 960px) {
+  .hero {
+    overflow: hidden;
+  }
+
+  .wallet-art::before {
+    transform: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    padding-top: 110px;
+    padding-bottom: 30px;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-art {
+    width: 520px;
+    max-width: 100%;
+    margin: 30px auto 0;
+    transform: none;
+  }
+
+  .scroll-hint {
+    position: relative;
+    bottom: auto;
+    margin: 20px auto 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-copy,
+  .showcase-row > *,
+  .wallet-section > *,
+  .download-panel > *,
+  .footer-main-grid > *,
+  .footer-nav-columns > * {
+    min-width: 0;
+  }
+
+  .menu-button {
+    flex-shrink: 0;
+  }
+
+  .download-phones {
+    max-width: 100%;
+  }
+
+  .download-copy .download-fine {
+    flex-wrap: wrap;
+  }
+
+  .footer-nav-link,
+  .footer-contact-item {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Keep the paired phones visible, with their height included in the layout. */
+  .hero-art {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 340px !important;
+    margin-top: 24px !important;
+  }
+
+  .hero-front,
+  .hero-back {
+    grid-area: 1 / 1;
+    position: relative !important;
+    inset: auto !important;
+    width: 55% !important;
+    max-width: none !important;
+    align-self: start;
+  }
+
+  .hero-front {
+    justify-self: start;
+    margin: 18px 0 10px 20px !important;
+    transform: rotate(-7deg) !important;
+  }
+
+  .hero-back {
+    display: block;
+    justify-self: end;
+    margin: 40px 20px 0 0;
+    transform: rotate(7deg);
+    z-index: 1;
+  }
+
+  .art-caption {
+    grid-area: 2 / 1;
+    margin-top: 20px !important;
+  }
+
+  .download-phones {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .download-phones .phone,
+  .download-phones .phone + .phone {
+    grid-area: 1 / 1;
+    position: relative;
+    inset: auto;
+    width: 55%;
+    align-self: start;
+    justify-self: start;
+    margin: 12px 0 0 16px;
+    transform: rotate(-7deg);
+  }
+
+  .download-phones .phone + .phone {
+    justify-self: end;
+    margin: 30px 16px 0 0;
+    transform: rotate(7deg);
+  }
+
+  .store-btn > svg,
+  .drawer-app-btn > svg {
+    flex-shrink: 0;
+  }
+
+  /* Leave room above the device for the existing background word. */
+  .showcase-visual {
+    height: auto;
+    padding: 76px 18px 48px;
+  }
+
+  .visual-watermark {
+    top: 18px;
+    font-size: clamp(42px, 13vw, 64px);
+    letter-spacing: -2px;
+  }
+
+  .showcase-device-image {
+    height: clamp(260px, 82vw, 340px);
+    max-width: 85%;
+  }
+
+  .screen-index {
+    max-width: calc(100% - 24px);
+    font-size: 7px;
+    letter-spacing: 1.2px;
+  }
+
+  .section {
+    padding-top: 44px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .showcase-row {
+    gap: 24px;
+    padding: 0;
+    margin: 0 0 36px;
+  }
+
+  .showcase-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .steps-section {
+    margin-top: 0;
+    padding-block: 44px 28px;
+  }
+
+  .wallet-section {
+    gap: 28px;
+  }
+
+  .download-section {
+    padding-block: 36px 28px;
+  }
+
+  .site-footer {
+    padding-top: 28px;
+  }
+
+  .community-filters,
+  .testimonial-grid,
+  .legal-sidebar-menu,
+  .drawer-scroll-body {
+    scrollbar-width: none;
+  }
+
+  .community-filters::-webkit-scrollbar,
+  .testimonial-grid::-webkit-scrollbar,
+  .legal-sidebar-menu::-webkit-scrollbar,
+  .drawer-scroll-body::-webkit-scrollbar {
+    display: none;
+  }
+
+  .community-filters {
+    padding-bottom: 4px !important;
+    margin-bottom: 20px !important;
   }
 }
 
