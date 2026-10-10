@@ -1174,20 +1174,38 @@ function App() {
 
                 <div className="clean-marquee-viewport">
                   <div className="clean-marquee-track">
-                    {[...MARQUEE_COUPLES, ...MARQUEE_COUPLES].map((couple, index) => (
-                      <div key={index} className="clean-couple-chip">
-                        <div className="chip-avatar-wrap">
-                          <img src={couple.image} alt={couple.names} loading="lazy" />
-                        </div>
-                        <div className="chip-content">
-                          <div className="chip-name-row">
-                            <span className="chip-names">{couple.names}</span>
-                            <span className="chip-city">{couple.city}</span>
+                    <div className="clean-marquee-group">
+                      {MARQUEE_COUPLES.map((couple, index) => (
+                        <div key={`m1-${index}`} className="clean-couple-chip">
+                          <div className="chip-avatar-wrap">
+                            <img src={couple.image} alt={couple.names} loading="eager" />
                           </div>
-                          <p className="chip-quote">"{couple.quote}"</p>
+                          <div className="chip-content">
+                            <div className="chip-name-row">
+                              <span className="chip-names">{couple.names}</span>
+                              <span className="chip-city">{couple.city}</span>
+                            </div>
+                            <p className="chip-quote">"{couple.quote}"</p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
+                    <div className="clean-marquee-group" aria-hidden="true">
+                      {MARQUEE_COUPLES.map((couple, index) => (
+                        <div key={`m2-${index}`} className="clean-couple-chip">
+                          <div className="chip-avatar-wrap">
+                            <img src={couple.image} alt={couple.names} loading="eager" />
+                          </div>
+                          <div className="chip-content">
+                            <div className="chip-name-row">
+                              <span className="chip-names">{couple.names}</span>
+                              <span className="chip-city">{couple.city}</span>
+                            </div>
+                            <p className="chip-quote">"{couple.quote}"</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
