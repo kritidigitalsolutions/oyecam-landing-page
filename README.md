@@ -42,6 +42,7 @@ All legal pages feature a unified glassmorphism header toolbar with a quick tab 
 | **Terms of Service** | `#/terms` | Mandatory 18+ age verification requirement, strict code of conduct, virtual coin licensing and refund terms, limitation of liability, and jurisdiction (New Delhi). |
 | **Cookie Policy** | `#/cookie-policy` | Transparent cookie usage breakdown: Strictly necessary session tokens, media state preferences, zero cross-site ad tracking, and step-by-step browser opt-out guides. |
 | **Community Guidelines** | `#/community-guidelines` | Clear community standards: 4 zero-tolerance violations (harassment, unauthorized recording, explicit content, hate speech), strike escalation ladder, and host responsibilities. |
+| **Child Safety Policy** | `#/child-safety` | Zero tolerance for CSAM & minor exploitation, age assurance protocols, mandatory POCSO Act Sec 19 reporting, KYC for host withdrawals, and designated Child Safety Officer. |
 | **Contact Us** | `#/contact` | 4 direct support channels, 24/7 ticket generation system (`#OYE-XXXXXX`), verified office address, direct phone helpline, and interactive FAQ accordion. |
 | **Delete Account** | `#/delete-account` | Self-serve web data deletion portal allowing users to request permanent removal of account records and stored profile assets. |
 

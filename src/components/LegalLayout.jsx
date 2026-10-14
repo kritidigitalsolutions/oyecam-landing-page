@@ -1,12 +1,13 @@
 import React from 'react';
-import { ArrowLeft, Shield, FileText, Cookie, HeartHandshake, Mail, UserX, Phone, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Shield, FileText, Cookie, HeartHandshake, Mail, UserX, Phone, ExternalLink, ShieldAlert } from 'lucide-react';
 
 export default function LegalLayout({ activePage, onNavigate, children }) {
   const legalLinks = [
     { id: 'privacy', label: 'Privacy Policy', icon: Shield },
     { id: 'terms', label: 'Terms of Service', icon: FileText },
     { id: 'cookie-policy', label: 'Cookie Policy', icon: Cookie },
-    { id: 'community-guidelines', label: 'Community Guidelines', icon: HeartHandshake }
+    { id: 'community-guidelines', label: 'Community Guidelines', icon: HeartHandshake },
+    { id: 'child-safety', label: 'Child Safety Policy', icon: ShieldAlert }
   ];
 
   const supportLinks = [

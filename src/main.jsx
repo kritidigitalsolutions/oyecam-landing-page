@@ -8,12 +8,13 @@ import {
   Check, Menu, X, ShieldCheck, Heart, Wallet, 
   Star, ChevronDown, ChevronLeft, ChevronRight, Smartphone, Globe, UserX,
   Sparkles, Music, Instagram, Facebook, Youtube, Linkedin, ArrowUp,
-  Phone, MapPin, Shield, FileText, Cookie, HeartHandshake, Mail
+  Phone, MapPin, Shield, FileText, Cookie, HeartHandshake, Mail, ShieldAlert
 } from 'lucide-react';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import CookiePolicy from './pages/CookiePolicy';
 import CommunityGuidelines from './pages/CommunityGuidelines';
+import ChildSafetyPolicy from './pages/ChildSafetyPolicy';
 import ContactUs from './pages/ContactUs';
 import DeleteAccount from './pages/DeleteAccount';
 import './styles.css';
@@ -475,6 +476,7 @@ const getInitialPage = () => {
   const path = (typeof window !== 'undefined' ? window.location.pathname : '').toLowerCase();
   if (hash.includes('cookie') || path.includes('cookie')) return 'cookie-policy';
   if (hash.includes('guideline') || path.includes('guideline') || hash.includes('community') || path.includes('community-guidelines')) return 'community-guidelines';
+  if (hash.includes('child') || path.includes('child') || hash.includes('child-safety')) return 'child-safety';
   if (hash.includes('contact') || path.includes('contact')) return 'contact';
   if (hash.includes('delete') || path.includes('delete')) return 'delete-account';
   if (hash.includes('privacy') || path.includes('privacy')) return 'privacy';
@@ -884,6 +886,18 @@ function App() {
 
                     <button 
                       type="button"
+                      className={`drawer-nav-item ${currentPage === 'child-safety' ? 'active' : ''}`}
+                      onClick={() => { setDrawer(false); navigateTo('child-safety'); }}
+                    >
+                      <div className="drawer-nav-item-left">
+                        <span className="drawer-icon-box" style={{ color: '#ff416c' }}><ShieldAlert size={16} /></span>
+                        <span className="drawer-nav-title">Child Safety Policy</span>
+                      </div>
+                      <ArrowRight size={14} className="drawer-nav-arrow" />
+                    </button>
+
+                    <button 
+                      type="button"
                       className={`drawer-nav-item ${currentPage === 'contact' ? 'active' : ''}`}
                       onClick={() => { setDrawer(false); navigateTo('contact'); }}
                     >
@@ -955,6 +969,7 @@ function App() {
         {currentPage === 'terms' && <TermsConditions onNavigate={navigateTo} />}
         {currentPage === 'cookie-policy' && <CookiePolicy onNavigate={navigateTo} />}
         {currentPage === 'community-guidelines' && <CommunityGuidelines onNavigate={navigateTo} />}
+        {currentPage === 'child-safety' && <ChildSafetyPolicy onNavigate={navigateTo} />}
         {currentPage === 'contact' && <ContactUs onNavigate={navigateTo} />}
         {currentPage === 'delete-account' && <DeleteAccount onNavigate={navigateTo} />}
 
@@ -1905,6 +1920,16 @@ function App() {
                       onClick={() => navigateTo('community-guidelines')}
                     >
                       <span>Community guidelines</span>
+                      <ArrowRight size={13} className="footer-nav-arrow" />
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                      type="button" 
+                      className="footer-nav-link"
+                      onClick={() => navigateTo('child-safety')}
+                    >
+                      <span>Child safety policy</span>
                       <ArrowRight size={13} className="footer-nav-arrow" />
                     </button>
                   </li>

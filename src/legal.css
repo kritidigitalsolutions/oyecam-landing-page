@@ -935,6 +935,18 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+.legal-chip.danger {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+}
+
+.legal-badge.danger-badge {
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
 .legal-article {
   background: linear-gradient(145deg, rgba(22, 18, 33, 0.72), rgba(13, 10, 20, 0.72));
   border: 1px solid rgba(255, 255, 255, 0.08);
