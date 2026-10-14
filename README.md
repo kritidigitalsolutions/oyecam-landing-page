@@ -40,6 +40,7 @@ All legal pages feature a unified glassmorphism header toolbar with a quick tab 
 | :--- | :--- | :--- |
 | **Privacy Policy** | `#/privacy` | Complete data collection breakdown, camera/mic permission disclosure, zero ad-broker sales, retention timelines, and statutory Grievance Officer details. |
 | **Terms of Service** | `#/terms` | Mandatory 18+ age verification requirement, strict code of conduct, virtual coin licensing and refund terms, limitation of liability, and jurisdiction (New Delhi). |
+| **Refund Policy** | `#/refund-policy` | Transparent virtual coins and call minutes refund rules, situation eligibility table, 24h SLA acknowledgment, bank reversal timelines, and statutory Grievance Officer details. |
 | **Cookie Policy** | `#/cookie-policy` | Transparent cookie usage breakdown: Strictly necessary session tokens, media state preferences, zero cross-site ad tracking, and step-by-step browser opt-out guides. |
 | **Community Guidelines** | `#/community-guidelines` | Clear community standards: 4 zero-tolerance violations (harassment, unauthorized recording, explicit content, hate speech), strike escalation ladder, and host responsibilities. |
 | **Child Safety Policy** | `#/child-safety` | Zero tolerance for CSAM & minor exploitation, age assurance protocols, mandatory POCSO Act Sec 19 reporting, KYC for host withdrawals, and designated Child Safety Officer. |

@@ -8,10 +8,11 @@ import {
   Check, Menu, X, ShieldCheck, Heart, Wallet, 
   Star, ChevronDown, ChevronLeft, ChevronRight, Smartphone, Globe, UserX,
   Sparkles, Music, Instagram, Facebook, Youtube, Linkedin, ArrowUp,
-  Phone, MapPin, Shield, FileText, Cookie, HeartHandshake, Mail, ShieldAlert
+  Phone, MapPin, Shield, FileText, Cookie, HeartHandshake, Mail, ShieldAlert, Receipt
 } from 'lucide-react';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
+import RefundPolicy from './pages/RefundPolicy';
 import CookiePolicy from './pages/CookiePolicy';
 import CommunityGuidelines from './pages/CommunityGuidelines';
 import ChildSafetyPolicy from './pages/ChildSafetyPolicy';
@@ -475,6 +476,7 @@ const getInitialPage = () => {
   const hash = (typeof window !== 'undefined' ? window.location.hash : '').toLowerCase();
   const path = (typeof window !== 'undefined' ? window.location.pathname : '').toLowerCase();
   if (hash.includes('cookie') || path.includes('cookie')) return 'cookie-policy';
+  if (hash.includes('refund') || path.includes('refund')) return 'refund-policy';
   if (hash.includes('guideline') || path.includes('guideline') || hash.includes('community') || path.includes('community-guidelines')) return 'community-guidelines';
   if (hash.includes('child') || path.includes('child') || hash.includes('child-safety')) return 'child-safety';
   if (hash.includes('contact') || path.includes('contact')) return 'contact';
@@ -862,6 +864,18 @@ function App() {
 
                     <button 
                       type="button"
+                      className={`drawer-nav-item ${currentPage === 'refund-policy' ? 'active' : ''}`}
+                      onClick={() => { setDrawer(false); navigateTo('refund-policy'); }}
+                    >
+                      <div className="drawer-nav-item-left">
+                        <span className="drawer-icon-box" style={{ color: '#72e8ae' }}><Receipt size={16} /></span>
+                        <span className="drawer-nav-title">Refund Policy</span>
+                      </div>
+                      <ArrowRight size={14} className="drawer-nav-arrow" />
+                    </button>
+
+                    <button 
+                      type="button"
                       className={`drawer-nav-item ${currentPage === 'cookie-policy' ? 'active' : ''}`}
                       onClick={() => { setDrawer(false); navigateTo('cookie-policy'); }}
                     >
@@ -967,6 +981,7 @@ function App() {
       <main id="main">
         {currentPage === 'privacy' && <PrivacyPolicy onNavigate={navigateTo} />}
         {currentPage === 'terms' && <TermsConditions onNavigate={navigateTo} />}
+        {currentPage === 'refund-policy' && <RefundPolicy onNavigate={navigateTo} />}
         {currentPage === 'cookie-policy' && <CookiePolicy onNavigate={navigateTo} />}
         {currentPage === 'community-guidelines' && <CommunityGuidelines onNavigate={navigateTo} />}
         {currentPage === 'child-safety' && <ChildSafetyPolicy onNavigate={navigateTo} />}
@@ -1900,6 +1915,16 @@ function App() {
                       onClick={() => navigateTo('terms')}
                     >
                       <span>Terms of service</span>
+                      <ArrowRight size={13} className="footer-nav-arrow" />
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                      type="button" 
+                      className="footer-nav-link"
+                      onClick={() => navigateTo('refund-policy')}
+                    >
+                      <span>Refund policy</span>
                       <ArrowRight size={13} className="footer-nav-arrow" />
                     </button>
                   </li>
