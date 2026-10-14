@@ -223,6 +223,12 @@ export default function CookiePolicy({ onNavigate }) {
           </p>
           <div className="officer-card">
             <div className="officer-item">
+              <strong>Official Email</strong>
+              <a href="mailto:oyecam.com@gmail.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                <Mail size={13} color="#ff416c" /> oyecam.com@gmail.com
+              </a>
+            </div>
+            <div className="officer-item">
               <strong>Direct Support Helpline</strong>
               <a href="tel:+919010187125">+91 90101 87125</a>
             </div>
@@ -238,7 +244,7 @@ export default function CookiePolicy({ onNavigate }) {
             </div>
             <div className="officer-item">
               <strong>Registered Office</strong>
-              <span>1-41 Vivek Nagar Colony, Jillelaguda, Pincode - 500097, Telangana, India</span>
+              <span>1-41, Vivek Nagar Colony, Jillelaguda, Hyderabad, Telangana – 500097, India</span>
             </div>
           </div>
         </section>

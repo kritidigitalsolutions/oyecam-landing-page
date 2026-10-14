@@ -53,10 +53,11 @@ All legal pages feature a unified glassmorphism header toolbar with a quick tab 
 
 | Channel | Details | Availability |
 | :--- | :--- | :--- |
-| **Direct Phone Helpline** | **+91 90101 87125** | Mon – Sat (9:00 AM – 8:00 PM IST) |
+| **Official Support Email** | **[oyecam.com@gmail.com](mailto:oyecam.com@gmail.com)** | 24-Hour Response SLA |
+| **Direct Phone Helpline** | **+91 90101 87125** | Mon – Sat (10:00 AM – 5:00 PM IST) |
 | **Online Help Desk** | **Interactive Web Support Portal** (`#/contact`) | 24/7 Priority Ticket Dispatch |
 | **Trust & Safety Escalations** | **Direct Phone Helpline: +91 90101 87125** | Priority Escalation |
-| **Registered Corporate Office** | **1-41 Vivek Nagar Colony, Jillelaguda, Pincode - 500097** | Telangana / India |
+| **Registered Corporate Office** | **1-41, Vivek Nagar Colony, Jillelaguda, Hyderabad, Telangana – 500097** | CollabSkool Private Limited |
 
 ---
 

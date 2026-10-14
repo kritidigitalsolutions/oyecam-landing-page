@@ -1,6 +1,6 @@
 import React from 'react';
 import LegalLayout from '../components/LegalLayout';
-import { FileText, AlertTriangle, ShieldCheck, Scale, Coins, Ban } from 'lucide-react';
+import { FileText, AlertTriangle, ShieldCheck, Scale, Coins, Ban, Mail } from 'lucide-react';
 
 export default function TermsConditions({ onNavigate }) {
   return (
@@ -117,8 +117,8 @@ export default function TermsConditions({ onNavigate }) {
         <section>
           <h2>6. Intellectual Property Rights</h2>
           <p>
-            The oyecam application, logos, trademarks, visual design, audio-video engines, UI mockups, 
-            and underlying software algorithms are the exclusive property of oyecam Technologies Private Limited. 
+            The OyeCam application, logos, trademarks, visual design, audio-video engines, UI mockups, 
+            and underlying software algorithms are the exclusive property of <strong>CollabSkool Private Limited</strong> (CIN: U73100TS2025PTC207613). 
             You may not decompile, reverse-engineer, modify, or scrape any component of the service.
           </p>
         </section>
@@ -126,12 +126,12 @@ export default function TermsConditions({ onNavigate }) {
         <section>
           <h2>7. Limitation of Liability & Disclaimers</h2>
           <p>
-            oyecam provides the platform on an "AS IS" and "AS AVAILABLE" basis. While we maintain 
+            OyeCam provides the platform on an "AS IS" and "AS AVAILABLE" basis. While we maintain 
             rigorous safety filters, we cannot guarantee the behavior or statements of individual third-party users. 
             You interact with other users at your own discretion and responsibility.
           </p>
           <p>
-            In no event shall oyecam, its directors, employees, or partners be liable for any indirect, incidental, 
+            In no event shall CollabSkool Private Limited, its directors, employees, or partners be liable for any indirect, incidental, 
             consequential, or punitive damages arising from your access to or inability to use the platform.
           </p>
         </section>
@@ -141,7 +141,7 @@ export default function TermsConditions({ onNavigate }) {
           <p>
             These Terms shall be governed by and construed in accordance with the substantive laws of India. 
             Any dispute, controversy, or claim arising out of or relating to these Terms shall be subject to 
-            the exclusive jurisdiction of the competent courts situated in <strong>New Delhi, India</strong>.
+            the exclusive jurisdiction of the competent courts situated in <strong>Hyderabad, Telangana, India</strong>.
           </p>
         </section>
 
@@ -149,6 +149,12 @@ export default function TermsConditions({ onNavigate }) {
           <h2>9. Customer Support & Inquiries</h2>
           <p>For inquiries regarding these Terms and Conditions or assistance with your account, contact our support team:</p>
           <div className="officer-card">
+            <div className="officer-item">
+              <strong>Official Email</strong>
+              <a href="mailto:oyecam.com@gmail.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                <Mail size={13} color="#ff416c" /> oyecam.com@gmail.com
+              </a>
+            </div>
             <div className="officer-item">
               <strong>Support Helpline</strong>
               <a href="tel:+919010187125">+91 90101 87125</a>
@@ -165,7 +171,7 @@ export default function TermsConditions({ onNavigate }) {
             </div>
             <div className="officer-item">
               <strong>Registered Office</strong>
-              <span>1-41 Vivek Nagar Colony, Jillelaguda, Pincode - 500097</span>
+              <span>1-41, Vivek Nagar Colony, Jillelaguda, Hyderabad, Telangana – 500097</span>
             </div>
           </div>
         </section>

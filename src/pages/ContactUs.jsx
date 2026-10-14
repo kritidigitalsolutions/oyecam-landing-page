@@ -65,16 +65,16 @@ export default function ContactUs({ onNavigate }) {
         </div>
       </div>
 
-      {/* 4 Direct Contact Cards */}
+      {/* Direct Contact Cards */}
       <div className="contact-channels-grid">
         <div className="contact-card">
-          <div className="contact-card-icon support-bg"><MessageSquare size={20} /></div>
-          <h3>Online Help Desk</h3>
-          <p>Submit an inquiry directly through our automated support ticket system below.</p>
-          <a href="#contact-name" className="contact-channel-link">
-            Raise Support Ticket ↓
+          <div className="contact-card-icon support-bg"><Mail size={20} /></div>
+          <h3>Official Email Desk</h3>
+          <p>Email us directly for support, billing queries, and legal concerns.</p>
+          <a href="mailto:oyecam.com@gmail.com" className="contact-channel-link">
+            oyecam.com@gmail.com
           </a>
-          <span className="contact-sub-badge"><Clock size={11} /> 24/7 Priority Resolution</span>
+          <span className="contact-sub-badge"><Clock size={11} /> 24-Hour Response SLA</span>
         </div>
 
         <div className="contact-card">
@@ -84,7 +84,7 @@ export default function ContactUs({ onNavigate }) {
           <a href="tel:+919010187125" className="contact-channel-link">
             +91 90101 87125
           </a>
-          <span className="contact-sub-badge">Mon - Sat (9:00 AM - 8:00 PM IST)</span>
+          <span className="contact-sub-badge">Mon - Sat (10:00 AM - 5:00 PM IST)</span>
         </div>
 
         <div className="contact-card">
@@ -101,9 +101,9 @@ export default function ContactUs({ onNavigate }) {
           <div className="contact-card-icon office-bg"><MapPin size={20} /></div>
           <h3>Registered Office</h3>
           <p className="contact-address-text">
-            1-41 Vivek Nagar Colony, Jillelaguda, Pincode - 500097, Telangana, India
+            1-41, Vivek Nagar Colony, Jillelaguda, Hyderabad, Telangana – 500097
           </p>
-          <span className="contact-sub-badge">Official Corporate Address</span>
+          <span className="contact-sub-badge">CollabSkool Private Limited</span>
         </div>
       </div>
 

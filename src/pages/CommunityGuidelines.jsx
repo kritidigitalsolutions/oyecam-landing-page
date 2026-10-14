@@ -2,7 +2,7 @@ import React from 'react';
 import LegalLayout from '../components/LegalLayout';
 import { 
   HeartHandshake, ShieldAlert, Video, EyeOff, Ban, AlertTriangle, 
-  Sparkles, CheckCircle2, UserCheck, Flag, ShieldCheck 
+  Sparkles, CheckCircle2, UserCheck, Flag, ShieldCheck, Mail 
 } from 'lucide-react';
 
 export default function CommunityGuidelines({ onNavigate }) {
@@ -153,6 +153,12 @@ export default function CommunityGuidelines({ onNavigate }) {
           </p>
           <div className="officer-card">
             <div className="officer-item">
+              <strong>Safety & Grievance Email</strong>
+              <a href="mailto:oyecam.com@gmail.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                <Mail size={13} color="#ff416c" /> oyecam.com@gmail.com
+              </a>
+            </div>
+            <div className="officer-item">
               <strong>Support & Safety Helpline</strong>
               <a href="tel:+919010187125">+91 90101 87125</a>
             </div>
@@ -168,7 +174,7 @@ export default function CommunityGuidelines({ onNavigate }) {
             </div>
             <div className="officer-item">
               <strong>Registered Office</strong>
-              <span>1-41 Vivek Nagar Colony, Jillelaguda, Pincode - 500097, Telangana, India</span>
+              <span>1-41, Vivek Nagar Colony, Jillelaguda, Hyderabad, Telangana – 500097, India</span>
             </div>
           </div>
         </section>

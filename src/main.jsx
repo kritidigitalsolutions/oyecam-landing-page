@@ -946,7 +946,11 @@ function App() {
                     <Phone size={15} />
                     <span>+91 90101 87125</span>
                   </a>
-                  <p className="drawer-helpline-address">
+                  <a href="mailto:oyecam.com@gmail.com" className="drawer-helpline-number" style={{ marginTop: '8px', fontSize: '13px' }}>
+                    <Mail size={15} />
+                    <span>oyecam.com@gmail.com</span>
+                  </a>
+                  <p className="drawer-helpline-address" style={{ marginTop: '10px' }}>
                     1-41 Vivek Nagar Colony, Jillelaguda, Hyderabad - 500097
                   </p>
                 </div>
@@ -1739,6 +1743,10 @@ function App() {
 
               {/* Contact & Address Details */}
               <div className="footer-contact-details">
+                <a href="mailto:oyecam.com@gmail.com" className="footer-contact-item">
+                  <Mail size={13} className="footer-contact-icon" />
+                  <span>oyecam.com@gmail.com</span>
+                </a>
                 <a href="tel:+919010187125" className="footer-contact-item">
                   <Phone size={13} className="footer-contact-icon" />
                   <span>+91 90101 87125</span>
@@ -1854,11 +1862,10 @@ function App() {
                   </li>
                   <li>
                     <a 
-                      href="#how-it-works" 
+                      href="mailto:oyecam.com@gmail.com" 
                       className="footer-nav-link"
-                      onClick={(e) => handleFooterAnchor(e, 'how-it-works')}
                     >
-                      <span>FAQs</span>
+                      <span>oyecam.com@gmail.com</span>
                       <ArrowRight size={13} className="footer-nav-arrow" />
                     </a>
                   </li>

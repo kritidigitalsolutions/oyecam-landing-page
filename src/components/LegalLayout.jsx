@@ -81,6 +81,10 @@ export default function LegalLayout({ activePage, onNavigate, children }) {
               <Phone size={13} />
               <span>+91 90101 87125</span>
             </a>
+            <a href="mailto:oyecam.com@gmail.com" className="sidebar-card-phone" style={{ marginTop: '8px', fontSize: '11px', textTransform: 'none' }}>
+              <Mail size={13} />
+              <span>oyecam.com@gmail.com</span>
+            </a>
           </div>
         </aside>
 
