@@ -54,6 +54,12 @@ export default function CommunityGuidelines({ onNavigate }) {
           </p>
           <div className="guideline-grid">
             <div className="guideline-card danger">
+              <div className="guideline-icon"><ShieldAlert size={18} /></div>
+              <h4>Child Sexual Abuse &amp; Exploitation (CSAE)</h4>
+              <p>Absolute zero tolerance for any CSAE, CSAM, grooming, or child endangerment. Immediate permanent ban, hardware blacklisting, and direct referral to Indian law enforcement (POCSO) and international authorities.</p>
+            </div>
+
+            <div className="guideline-card danger">
               <div className="guideline-icon"><Ban size={18} /></div>
               <h4>Harassment & Bullying</h4>
               <p>Stalking, targeted insults, blackmail, doxxing personal numbers or addresses, or non-stop unsolicited contact after being told to stop.</p>

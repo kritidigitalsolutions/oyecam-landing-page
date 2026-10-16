@@ -3,7 +3,8 @@ import LegalLayout from '../components/LegalLayout';
 import { 
   ShieldCheck, Lock, EyeOff, UserCheck, Calendar, Mail, Phone, MapPin, 
   Scale, Clock, AlertCircle, Database, Server, UserX, FileText, 
-  CheckCircle2, ShieldAlert, ArrowRight, Smartphone, Eye
+  CheckCircle2, ShieldAlert, ArrowRight, Smartphone, Eye,
+  Ban, AlertTriangle, ExternalLink
 } from 'lucide-react';
 
 export default function PrivacyPolicy({ onNavigate }) {
@@ -98,7 +99,8 @@ export default function PrivacyPolicy({ onNavigate }) {
         <div className="legal-chips-row">
           <span className="legal-chip"><Lock size={14} /> No Call Audio/Video Stored</span>
           <span className="legal-chip"><EyeOff size={14} /> Never Sell Personal Data</span>
-          <span className="legal-chip"><UserCheck size={14} /> Right to Access &amp; Delete</span>
+          <span className="legal-chip danger"><Ban size={14} /> Zero Tolerance: CSAE &amp; CSAM Prohibited</span>
+          <span className="legal-chip"><ShieldCheck size={14} /> Mandatory 18+ Verification</span>
         </div>
       </div>
 
@@ -244,20 +246,227 @@ export default function PrivacyPolicy({ onNavigate }) {
           </p>
         </section>
 
-        {/* Section 5 */}
-        <section>
-          <h2>5. Children's Data</h2>
-          <div className="legal-callout danger" style={{ marginBottom: '16px' }}>
-            <strong style={{ color: '#fee2e2', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-              <ShieldAlert size={16} color="#ef4444" /> Strict 18+ Age Restriction
+        {/* Section 5: Child Safety Standards & CSAE Prohibition */}
+        <section id="child-safety-standards">
+          <h2>5. Child Safety Standards &amp; Explicit Prohibition of Child Sexual Abuse and Exploitation (CSAE)</h2>
+          
+          <div className="legal-callout danger" style={{ marginBottom: '20px', borderColor: 'rgba(239, 68, 68, 0.45)', background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(20, 10, 26, 0.95))' }}>
+            <strong style={{ color: '#fee2e2', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', fontSize: '15px' }}>
+              <ShieldAlert size={18} color="#ef4444" /> Published Child Safety Standards &amp; Zero-Tolerance Notice
             </strong>
-            <p style={{ margin: 0, fontSize: '13px', color: '#fca5a5' }}>
-              OyeCam is strictly not meant for anyone under 18 years of age. We do not knowingly collect personal data from children or minors.
+            <p style={{ margin: 0, fontSize: '13.5px', color: '#fecaca', lineHeight: 1.65 }}>
+              These Child Safety Standards are published by <strong>CollabSkool Private Limited</strong> (CIN: <code>U73100TS2025PTC207613</code>), developer and operator of the <strong>OyeCam</strong> mobile application and services, as displayed on our Google Play store listing. 
+              CollabSkool Private Limited maintains an absolute <strong>Zero-Tolerance Policy</strong> against any and all forms of <strong>Child Sexual Abuse and Exploitation (CSAE)</strong> and <strong>Child Sexual Abuse Material (CSAM)</strong> across OyeCam.
             </p>
           </div>
+
           <p>
-            If we discover or are notified that an individual under 18 has submitted data or created an account, we suspend the account immediately and permanently delete their data from our active systems, except where statutory Indian law mandates retention for law enforcement reporting (see our <button type="button" onClick={() => onNavigate('child-safety')} style={{ color: '#ff688a', background: 'none', border: 'none', textDecoration: 'underline', cursor: 'pointer', padding: 0, font: 'inherit', fontWeight: 600 }}>Child Safety Policy</button>).
+            OyeCam is an exclusively <strong>18+ adult communication and video streaming platform</strong>. In compliance with Google Play Child Safety policies, the <strong>Protection of Children from Sexual Offences (POCSO) Act, 2012</strong>, the <strong>Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021</strong>, and international online child protection frameworks, we publish and enforce the following legally binding standards:
           </p>
+
+          <h3 style={{ color: '#fff', fontSize: '16px', marginTop: '22px', marginBottom: '12px' }}>
+            A. Strictly Prohibited CSAE Conduct and Content
+          </h3>
+          <p>
+            The following activities, behaviors, and content are strictly prohibited on OyeCam under all circumstances. Engaging in, attempting, or facilitating any of the following constitutes a severe criminal violation resulting in immediate account termination, device banning, and direct statutory reporting:
+          </p>
+
+          <div className="guideline-grid">
+            <div className="guideline-card danger">
+              <div className="guideline-icon"><Ban size={18} /></div>
+              <h4>Child Sexual Abuse &amp; Exploitation (CSAE)</h4>
+              <p>Any sexual, romantic, suggestive, predatory, or exploitative interaction with, directed toward, or referencing any child or minor (anyone under 18 years of age).</p>
+            </div>
+
+            <div className="guideline-card danger">
+              <div className="guideline-icon"><ShieldAlert size={18} /></div>
+              <h4>Child Sexual Abuse Material (CSAM)</h4>
+              <p>The creation, production, transmission, distribution, uploading, soliciting, displaying, or facilitation of any CSAM in any format, whether actual, animated, drawn, or AI-generated.</p>
+            </div>
+
+            <div className="guideline-card danger">
+              <div className="guideline-icon"><UserX size={18} /></div>
+              <h4>Child Grooming &amp; Online Solicitation</h4>
+              <p>Attempting to build rapport, communicate, or groom a minor for sexual abuse, soliciting private photos/videos, or attempting to migrate conversations to external channels.</p>
+            </div>
+
+            <div className="guideline-card danger">
+              <div className="guideline-icon"><AlertTriangle size={18} /></div>
+              <h4>Underage Sextortion &amp; Blackmail</h4>
+              <p>Threatening, coercing, or blackmailing any individual using sexualized, intimate, or minor-related images, media, or private details.</p>
+            </div>
+
+            <div className="guideline-card danger">
+              <div className="guideline-icon"><Lock size={18} /></div>
+              <h4>Child Trafficking &amp; Endangerment</h4>
+              <p>Using the platform to facilitate, promote, or coordinate child commercial sexual exploitation, illegal child labor, trafficking, or physical harm of any minor.</p>
+            </div>
+
+            <div className="guideline-card danger">
+              <div className="guideline-icon"><EyeOff size={18} /></div>
+              <h4>Simulated Minor Roleplay &amp; Presence</h4>
+              <p>Accounts, avatars, or personas simulating or roleplaying underage sexual situations, or allowing any minor to appear in live video feeds, calls, or profile media.</p>
+            </div>
+          </div>
+
+          <h3 style={{ color: '#fff', fontSize: '16px', marginTop: '26px', marginBottom: '12px' }}>
+            B. Age Assurance &amp; Verification Safeguards
+          </h3>
+          <ul style={{ lineHeight: 1.8 }}>
+            <li><strong>Mandatory 18+ Barrier:</strong> OyeCam does not allow anyone under 18 to create an account, make calls, join streams, or act as a creator/host.</li>
+            <li><strong>Automated Date of Birth Verification:</strong> Sign-up algorithms automatically reject and block any registration attempts where the user-provided birth date indicates an age below 18 years.</li>
+            <li><strong>Mandatory Government ID Verification for Hosts:</strong> Before any host or creator can withdraw coins, wallet earnings, or payouts, they must complete strict identity and age verification (KYC) using official government IDs (Aadhaar / PAN / Passport). Failure or underage discovery results in immediate account banning and total forfeiture of earnings.</li>
+            <li><strong>Active Human &amp; Algorithmic Moderation:</strong> Our moderation team actively audits user-reported interactions and flagged profiles to swiftly identify and eliminate any unauthorized underage access.</li>
+          </ul>
+
+          <h3 style={{ color: '#fff', fontSize: '16px', marginTop: '26px', marginBottom: '12px' }}>
+            C. Reporting Channels &amp; 24-Hour Response SLA
+          </h3>
+          <p>
+            We provide multiple always-available channels for users, parents, legal guardians, and the public to report child safety or CSAE concerns:
+          </p>
+
+          <div className="guideline-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
+            <div className="guideline-card">
+              <div className="guideline-icon" style={{ background: 'rgba(239, 68, 68, 0.16)', color: '#ef4444' }}><ShieldAlert size={18} /></div>
+              <h4>In-App Instant Reporting</h4>
+              <p>Tap the <strong>Report</strong> button on any active video/voice call screen, chat conversation, or user profile, and choose <strong>"Child Safety / CSAE"</strong> for priority review.</p>
+            </div>
+
+            <div className="guideline-card">
+              <div className="guideline-icon" style={{ background: 'rgba(168, 85, 247, 0.16)', color: '#c084fc' }}><Mail size={18} /></div>
+              <h4>Dedicated Safety Email</h4>
+              <p>Email: <a href="mailto:oyecam.com@gmail.com" style={{ color: '#ff7597', fontWeight: 600 }}>oyecam.com@gmail.com</a></p>
+              <span style={{ fontSize: '11px', color: '#a79abf' }}>Monitored with highest priority</span>
+            </div>
+
+            <div className="guideline-card">
+              <div className="guideline-icon" style={{ background: 'rgba(34, 197, 94, 0.16)', color: '#4ade80' }}><Phone size={18} /></div>
+              <h4>Safety Helpline</h4>
+              <p>Phone: <a href="tel:+919010187125" style={{ color: '#72e8ae', fontWeight: 600 }}>+91 90101 87125</a></p>
+              <span style={{ fontSize: '11px', color: '#a79abf' }}>10:00 AM – 5:00 PM IST (Mon – Sat)</span>
+            </div>
+          </div>
+
+          <p style={{ marginTop: '14px', fontSize: '13px', color: '#d8cfeb' }}>
+            <strong>Response SLA:</strong> We formally acknowledge all Child Safety and CSAE complaints within <strong>24 hours</strong>. Emergency triage and containment measures commence immediately upon receipt.
+          </p>
+
+          <h3 style={{ color: '#fff', fontSize: '16px', marginTop: '26px', marginBottom: '12px' }}>
+            D. Enforcement Actions &amp; Law Enforcement Reporting
+          </h3>
+          <p>Upon verifying any CSAE incident or credible threat of child endangerment, CollabSkool Private Limited immediately executes:</p>
+          <ul style={{ lineHeight: 1.8 }}>
+            <li><strong>Immediate Account &amp; Device Blacklist:</strong> Instant termination of the offending account and permanent hardware device hash banning.</li>
+            <li><strong>Forfeiture of In-App Assets:</strong> Complete and irreversible forfeiture of all coins, gifts, and accrued host earnings.</li>
+            <li><strong>Statutory Evidence Preservation:</strong> Retention and secure isolation of logs, IP addresses, timestamps, and communications strictly for criminal prosecution as required by Indian cyber regulations.</li>
+            <li><strong>Mandatory POCSO Act Section 19 Reporting:</strong> Immediate reporting to local police authorities or the Special Juvenile Police Unit (SJPU) under Section 19 of the POCSO Act, 2012.</li>
+            <li><strong>National Cyber Crime &amp; NCMEC Escalation:</strong> Direct statutory filing with the Indian National Cyber Crime Reporting Portal (<a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" style={{ color: '#72e8ae' }}>cybercrime.gov.in</a>) and referral to the National Center for Missing &amp; Exploited Children (NCMEC).</li>
+          </ul>
+
+          <h3 style={{ color: '#fff', fontSize: '16px', marginTop: '26px', marginBottom: '12px' }}>
+            E. Designated Child Safety Point of Contact &amp; Response Team
+          </h3>
+          <p>
+            In compliance with Google Play Child Safety Standards declaration requirements and Indian Information Technology regulations, CollabSkool Private Limited has appointed a designated Child Safety Officer and team:
+          </p>
+
+          <div className="contact-officer-card" style={{ 
+            background: 'linear-gradient(145deg, rgba(255, 65, 108, 0.09), rgba(20, 14, 32, 0.96))',
+            border: '1px solid rgba(255, 65, 108, 0.35)',
+            borderRadius: '20px',
+            padding: '24px',
+            marginTop: '16px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+              <div style={{ width: '42px', height: '42px', borderRadius: '12px', background: 'rgba(255, 65, 108, 0.16)', display: 'grid', placeItems: 'center', color: '#ff416c' }}>
+                <ShieldCheck size={22} />
+              </div>
+              <div>
+                <h4 style={{ margin: 0, fontSize: '18px', color: '#fff' }}>Govardhan Reddy</h4>
+                <span style={{ fontSize: '12px', color: '#ff94b0', fontWeight: 600 }}>
+                  Designated Child Safety Officer &amp; Nodal Officer · CollabSkool Private Limited (OyeCam)
+                </span>
+              </div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '14px', fontSize: '13px' }}>
+              <div>
+                <span style={{ display: 'block', fontSize: '11px', color: '#8f83a8', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '3px' }}>Child Safety Email</span>
+                <a href="mailto:oyecam.com@gmail.com" style={{ color: '#fff', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <Mail size={14} color="#ff416c" /> oyecam.com@gmail.com
+                </a>
+              </div>
+
+              <div>
+                <span style={{ display: 'block', fontSize: '11px', color: '#8f83a8', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '3px' }}>Child Safety Phone</span>
+                <a href="tel:+919010187125" style={{ color: '#fff', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <Phone size={14} color="#72e8ae" /> +91 9010187125
+                </a>
+              </div>
+
+              <div>
+                <span style={{ display: 'block', fontSize: '11px', color: '#8f83a8', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '3px' }}>Developer Organization</span>
+                <span style={{ color: '#fff', fontWeight: 500 }}>CollabSkool Private Limited (CIN: U73100TS2025PTC207613)</span>
+              </div>
+
+              <div>
+                <span style={{ display: 'block', fontSize: '11px', color: '#8f83a8', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '3px' }}>Application Listing</span>
+                <span style={{ color: '#fff', fontWeight: 500 }}>OyeCam (Google Play Store)</span>
+              </div>
+
+              <div style={{ gridColumn: '1 / -1' }}>
+                <span style={{ display: 'block', fontSize: '11px', color: '#8f83a8', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '3px' }}>Registered Office Address</span>
+                <div style={{ color: '#d8cfeb', display: 'flex', alignItems: 'flex-start', gap: '6px' }}>
+                  <MapPin size={15} color="#a78bfa" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <span>1-41, Vivek Nagar Colony, Jillelaguda, Hyderabad, Telangana – 500097, India</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ 
+            marginTop: '20px', 
+            padding: '18px 20px', 
+            borderRadius: '16px', 
+            background: 'rgba(255, 65, 108, 0.07)', 
+            border: '1px solid rgba(255, 65, 108, 0.25)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '14px'
+          }}>
+            <div>
+              <strong style={{ color: '#fff', fontSize: '14px', display: 'block', marginBottom: '4px' }}>
+                Dedicated Standalone Child Safety Standards Documentation
+              </strong>
+              <p style={{ margin: 0, fontSize: '12.5px', color: '#cfc4e2' }}>
+                You may also access our dedicated, publicly accessible, standalone Child Safety Policy web resource.
+              </p>
+            </div>
+            <button 
+              type="button" 
+              onClick={() => onNavigate('child-safety')}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: 'linear-gradient(135deg, #ff416c, #ff4b2b)',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '10px',
+                padding: '10px 18px',
+                fontSize: '13px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'opacity 0.2s'
+              }}
+            >
+              <span>View Standalone Child Safety Policy</span>
+              <ArrowRight size={14} />
+            </button>
+          </div>
         </section>
 
         {/* Section 6 */}

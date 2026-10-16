@@ -12,9 +12,9 @@ export default function ChildSafetyPolicy({ onNavigate }) {
       {/* Legal Hero Banner */}
       <div className="legal-hero">
         <div className="legal-badge danger-badge">
-          <ShieldAlert size={14} /> Zero Tolerance · POCSO Act & Global Compliance
+          <ShieldAlert size={14} /> Zero Tolerance · POCSO Act &amp; Google Play Child Safety Standards
         </div>
-        <h1>OyeCam – <span className="gradient-text">Child Safety Policy</span></h1>
+        <h1>OyeCam – <span className="gradient-text">Child Safety Standards &amp; CSAE Policy</span></h1>
         <div className="legal-meta">
           <span>CollabSkool Private Limited (CIN: U73100TS2025PTC207613)</span>
           <span>•</span>
@@ -23,7 +23,7 @@ export default function ChildSafetyPolicy({ onNavigate }) {
           <span>Mandatory 18+ Platform</span>
         </div>
         <div className="legal-chips-row">
-          <span className="legal-chip danger"><Ban size={14} /> Zero Tolerance for CSAM / Exploitation</span>
+          <span className="legal-chip danger"><Ban size={14} /> Zero Tolerance for CSAE &amp; CSAM</span>
           <span className="legal-chip"><ShieldCheck size={14} /> Mandatory Govt ID Verification for Hosts</span>
           <span className="legal-chip"><Scale size={14} /> Mandatory POCSO Act Sec 19 Reporting</span>
         </div>
@@ -32,14 +32,14 @@ export default function ChildSafetyPolicy({ onNavigate }) {
       <article className="legal-article">
         {/* Core Summary Callout */}
         <div className="legal-summary-card" style={{ borderColor: 'rgba(255, 65, 108, 0.4)', background: 'linear-gradient(145deg, rgba(255, 65, 108, 0.08), rgba(20, 10, 26, 0.9))' }}>
-          <h3 style={{ color: '#ff6b8b' }}><ShieldAlert size={19} /> Strict Zero-Tolerance Notice</h3>
+          <h3 style={{ color: '#ff6b8b' }}><ShieldAlert size={19} /> Strict Zero-Tolerance Notice &amp; Published Standards</h3>
           <p>
-            This Child Safety Policy applies to <strong>OyeCam</strong>, a video and voice calling app owned and operated by <strong>CollabSkool Private Limited</strong> (CIN: U73100TS2025PTC207613). 
-            "OyeCam", "we", "us" and "our" mean CollabSkool Private Limited. "You" and "User" mean anyone who uses the app, including callers and hosts/creators.
+            These Child Safety Standards apply to <strong>OyeCam</strong>, an adult social video and voice calling application developed and operated by <strong>CollabSkool Private Limited</strong> (CIN: U73100TS2025PTC207613), as displayed on our Google Play Store listing. 
+            "OyeCam", "we", "us" and "our" mean CollabSkool Private Limited. "You" and "User" mean anyone who accesses or uses the app.
           </p>
           <p style={{ marginTop: '10px' }}>
-            <strong>OyeCam is strictly for adults aged 18 and above only.</strong> We enforce zero tolerance for any content or behaviour that sexualises, exploits, grooms, or endangers a child. 
-            Any violation leads to an <strong>immediate permanent ban, device blacklisting, forfeiture of earnings, and prompt reporting to law enforcement authorities</strong>.
+            <strong>OyeCam is strictly for adults aged 18 and above only.</strong> CollabSkool Private Limited enforces an unequivocal Zero-Tolerance policy against <strong>Child Sexual Abuse and Exploitation (CSAE)</strong> and <strong>Child Sexual Abuse Material (CSAM)</strong> in all forms. 
+            Any violation leads to an <strong>immediate permanent ban, device hardware blacklisting, forfeiture of earnings, and prompt statutory reporting to law enforcement authorities</strong>.
           </p>
         </div>
 
@@ -92,15 +92,21 @@ export default function ChildSafetyPolicy({ onNavigate }) {
 
         {/* Section 3 */}
         <section>
-          <h2>3. Prohibited Content and Conduct</h2>
+          <h2>3. Explicit Prohibition of Child Sexual Abuse and Exploitation (CSAE) and CSAM</h2>
           <p>
-            The following content and behaviours are strictly prohibited on OyeCam without exception and will be reported directly to law enforcement:
+            CollabSkool Private Limited strictly and unequivocally prohibits Child Sexual Abuse and Exploitation (CSAE) and Child Sexual Abuse Material (CSAM) across the OyeCam application and related web services without exception. The following content and behaviours are strictly prohibited and will be reported directly to law enforcement:
           </p>
           <div className="guideline-grid">
             <div className="guideline-card danger">
               <div className="guideline-icon"><Ban size={18} /></div>
+              <h4>Child Sexual Abuse &amp; Exploitation (CSAE)</h4>
+              <p>Any sexual, romantic, suggestive, or exploitative interaction with, directed toward, or referencing a minor or person appearing to be under 18 years of age.</p>
+            </div>
+
+            <div className="guideline-card danger">
+              <div className="guideline-icon"><ShieldAlert size={18} /></div>
               <h4>Child Sexual Abuse Material (CSAM)</h4>
-              <p>Any production, possession, transmission, or facilitation of CSAM or CSAM-adjacent material in any form, including real, drawn, AI-generated, animated, or edited images and videos.</p>
+              <p>Any production, possession, transmission, distribution, uploading, or facilitation of CSAM or CSAM-adjacent material in any form, including real, drawn, AI-generated, animated, or edited images and videos.</p>
             </div>
 
             <div className="guideline-card danger">
@@ -220,9 +226,9 @@ export default function ChildSafetyPolicy({ onNavigate }) {
 
         {/* Section 8 */}
         <section>
-          <h2>8. Child Safety Point of Contact (Nodal Officer)</h2>
+          <h2>8. Child Safety Point of Contact &amp; Response Team</h2>
           <p>
-            In accordance with Indian Information Technology regulations and our child protection commitment, OyeCam has appointed a designated Child Safety Officer:
+            In accordance with Google Play Child Safety Standards declaration requirements and Indian Information Technology regulations, CollabSkool Private Limited has appointed a designated Child Safety Officer and team for OyeCam:
           </p>
 
           <div className="contact-officer-card" style={{ 
@@ -238,7 +244,9 @@ export default function ChildSafetyPolicy({ onNavigate }) {
               </div>
               <div>
                 <h3 style={{ margin: 0, fontSize: '18px', color: '#fff' }}>Govardhan Reddy</h3>
-                <span style={{ fontSize: '12px', color: '#ff94b0', fontWeight: 600 }}>Designated Child Safety Officer · CollabSkool Private Limited</span>
+                <span style={{ fontSize: '12px', color: '#ff94b0', fontWeight: 600 }}>
+                  Designated Child Safety Officer &amp; Nodal Officer · CollabSkool Private Limited (OyeCam)
+                </span>
               </div>
             </div>
 

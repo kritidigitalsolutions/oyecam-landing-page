@@ -478,7 +478,7 @@ const getInitialPage = () => {
   if (hash.includes('cookie') || path.includes('cookie')) return 'cookie-policy';
   if (hash.includes('refund') || path.includes('refund')) return 'refund-policy';
   if (hash.includes('guideline') || path.includes('guideline') || hash.includes('community') || path.includes('community-guidelines')) return 'community-guidelines';
-  if (hash.includes('child') || path.includes('child') || hash.includes('child-safety')) return 'child-safety';
+  if (hash.includes('child') || path.includes('child') || hash.includes('child-safety') || hash.includes('csae') || path.includes('csae')) return 'child-safety';
   if (hash.includes('contact') || path.includes('contact')) return 'contact';
   if (hash.includes('delete') || path.includes('delete')) return 'delete-account';
   if (hash.includes('privacy') || path.includes('privacy')) return 'privacy';
@@ -496,6 +496,23 @@ function App() {
   const headerRef = useRef(null);
   const menuDialog = useRef(null);
   const menuButton = useRef(null);
+
+  useEffect(() => {
+    const titles = {
+      'home': 'OyeCam — A little hello. A real connection.',
+      'privacy': 'OyeCam – Privacy Policy & Child Safety Standards | CollabSkool Private Limited',
+      'child-safety': 'OyeCam – Child Safety Standards & CSAE Policy | CollabSkool Private Limited',
+      'terms': 'OyeCam – Terms & Conditions | CollabSkool Private Limited',
+      'refund-policy': 'OyeCam – Refund Policy | CollabSkool Private Limited',
+      'cookie-policy': 'OyeCam – Cookie Policy | CollabSkool Private Limited',
+      'community-guidelines': 'OyeCam – Community Guidelines | CollabSkool Private Limited',
+      'contact': 'OyeCam – Contact Us & Support | CollabSkool Private Limited',
+      'delete-account': 'OyeCam – Delete Account | CollabSkool Private Limited'
+    };
+    if (typeof document !== 'undefined' && titles[currentPage]) {
+      document.title = titles[currentPage];
+    }
+  }, [currentPage]);
 
   useEffect(() => {
     const handleNav = () => {
